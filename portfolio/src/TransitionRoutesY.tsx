@@ -27,10 +27,9 @@ const pageTransition = {
 };
 
 // Ta bort children type om inget annat
-const TransitionRoutes = ({ children }: TransitionWrapperProps) => {
+const TransitionRoutesY = ({ children }: TransitionWrapperProps) => {
   const location = useLocation();
 
-  //  Replace with mode="wait" ExitbeforeEnter
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -46,4 +45,4 @@ const TransitionRoutes = ({ children }: TransitionWrapperProps) => {
     </AnimatePresence>
   );
 };
-export default TransitionRoutes;
+export default TransitionRoutesY;

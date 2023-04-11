@@ -3,49 +3,71 @@ import React, { useState } from "react";
 import "./App.css";
 import styled from "styled-components";
 // Transition between pages & pages
-import TransitionRoutes from "./TransitionRoutes";
-import { Link, Route, Routes } from "react-router-dom";
+import TransitionRoutesY from "./TransitionRoutesY";
+import { Link, Route } from "react-router-dom";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import TransitionRoutesX from "./TransitionRoutesX";
+import PortfolioTesla from "./pages/PortfolioTesla";
+import PortfolioTodo from "./pages/PortfolioTodo";
 
 function App() {
   const [bgTheme, setBgTheme] = useState(false);
 
   return (
+    // App
     <Appen bgTheme={bgTheme} className="App">
+      {/* Navbar */}
       <NavBar bgTheme={bgTheme} className="navbar">
         <div className="loggan">
           <h2>A&O</h2>
         </div>
         <ul className="länkar">
           <li>
+            <span className="material-symbols-outlined">person</span>
             <Link to={"/"}>About</Link>
           </li>
           <li>
+            <span className="material-symbols-outlined">cases</span>
             <Link to={"/portfolio"}>Portfolio</Link>
           </li>
           <li>
+            <span className="material-symbols-outlined">build</span>
             <Link to={"/services"}>Services</Link>
           </li>
           <li>
+            <span className="material-symbols-outlined">forum</span>
             <Link to={"/contact"}>Contact</Link>
           </li>
         </ul>
       </NavBar>
-      {/* Allt i header borde vara i en pages/Home.tsx och det i sin tur innehålla components/PortfolioPage.tsx  */}
-      <TransitionRoutes>
+      {/* Routes */}
+      <TransitionRoutesY>
         <Route
           path="/"
           element={
             <About tema={bgTheme} setTema={setBgTheme} namn="Axel Olivecrona" />
           }
         />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route
+          path="/portfolio"
+          element={<Portfolio tema={bgTheme} setTema={setBgTheme} />}
+        />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
-      </TransitionRoutes>
+      </TransitionRoutesY>
+      <TransitionRoutesX tema={bgTheme} setTema={setBgTheme}>
+        <Route
+          path="/portfoliotesla"
+          element={<PortfolioTesla tema={bgTheme} setTema={setBgTheme} />}
+        />
+        <Route
+          path="/portfoliotodo"
+          element={<PortfolioTodo tema={bgTheme} setTema={setBgTheme} />}
+        />
+      </TransitionRoutesX>
     </Appen>
   );
 }
@@ -66,6 +88,9 @@ const NavBar = styled.nav<{ bgTheme: boolean }>`
     color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
   }
   li:hover a {
+    color: #ec1839;
+  }
+  li:hover span {
     color: #ec1839;
   }
 `;

@@ -33,11 +33,7 @@ const AboutSection = ({ namn, tema, setTema }: AboutProps) => {
             Explore
           </button>
         </div>
-        <img
-          className="profil-img"
-          src="/images/profil.jpg"
-          alt="profil picture"
-        />
+        <img className="profil-img" src="/images/profil.jpg" alt="profil" />
       </Section>
     </>
   );

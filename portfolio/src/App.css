@@ -53,13 +53,21 @@ body {
 }
 
 .länkar li {
-  /* margin-left: 50px; */
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.länkar li * {
+  padding: 2px;
+}
+
+.länkar li span {
+  font-weight: 700;
 }
 
 .länkar li a {
   text-decoration: none;
-  /* color: white; */
 }
 
 .portfolio-page {
@@ -109,4 +117,9 @@ body {
   height: 400px;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(34, 34, 34, 0.9);
+}
+
+/* transitionroutes */
+#root > div > div:nth-child(3) {
+  width: 99%;
 }

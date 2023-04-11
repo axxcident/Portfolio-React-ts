@@ -1,28 +1,35 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const Portfolio = () => {
+interface PortfolioProps {
+  tema?: boolean;
+  setTema?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Portfolio = ({ tema, setTema }: PortfolioProps) => {
   return (
     <>
       <section className="portfolio-page">
         <Wrap>
           <h2 className="titel">Portfolio</h2>
-          <div className="works">
-            <p>olika arbeten här</p>
+          <Link to={"/portfoliotesla"}>portfoliotesla</Link>
+          <Link to={"/portfoliotodo"}>portfoliotodo</Link>
+          {/* <div className="works">
+            <h3>Esla Cars</h3>
+            <p>
+              {" "}
+              A dummy Tesla homepage. Replicated with react, typescript, router,
+              redux, styled components, interpolation and props{" "}
+            </p>
+            <div className="work-links">
+              <a href="https://github.com/axxcident/EslaCars">
+                Link to Github Repository
+              </a>
+              <a href="#">Link to Github Site</a>
+            </div>
             <img src="/images/EslaCars.jpg" alt="Ackman" />
-          </div>
-          <div className="works">
-            <p>olika arbeten här Part 2</p>
-            <img src="/images/Pixelated_Ackman.png" alt="Ackman" />
-          </div>
-          <div className="works">
-            <p>olika arbeten här Part 3</p>
-            <img src="/images/Pixelated_Ackman.png" alt="Ackman" />
-          </div>
-          <div className="works">
-            <p>olika arbeten här Part 3</p>
-            <img src="/images/Pixelated_Ackman.png" alt="Ackman" />
-          </div>
+          </div> */}
         </Wrap>
       </section>
     </>
@@ -31,40 +38,42 @@ const Portfolio = () => {
 
 export default Portfolio;
 
-const Wrap = styled.div`
+const Wrap = styled.div<PortfolioProps>`
   display: flex;
   flex-wrap: wrap;
   /* flex-direction: column; */
-  width: 75vw;
-  max-height: 70vh;
+  width: 80vw;
+  max-height: 80vh;
 
   .titel {
     width: 50vw;
     position: absolute;
     top: 25px;
     left: calc(250px + 2vmin);
-    /* width: auto; */
   }
   .works {
     display: flex;
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex-direction: column;
+    line-height: 1.5rem;
     margin: 30px;
-    /* min-width: 40%; */
+  }
+
+  .works h3 {
+    margin-bottom: 2rem;
   }
   .works img {
     background-size: cover;
     height: auto;
-    width: 60%;
+    width: 100%;
   }
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     .works {
-      /* flex-basis: 50%;
-      max-width: 50%; */
+      flex-basis: 50%;
+      max-width: 50%;
       flex-basis: 100%;
       max-width: 100%;
     }
-  }
+  } */
   /* @media (max-width: 768px) {
     .works {
       flex-basis: 100%;
