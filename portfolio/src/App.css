@@ -1,7 +1,8 @@
 .App {
   background-color: #282c34;
   min-height: 100vh;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
+  font-size: min(24px, 2.5vw);
   color: white;
 }
 
@@ -39,6 +40,34 @@
   color: white;
 }
 
-.App-header {
-  margin-left: 500px;
+.portfolio-page {
+  margin: 0 100px 0 calc(250px + 2vmin);
+  display: flex;
+  flex-direction: row;
+  height: 95vh;
+  align-items: center;
+  flex: 0 0 70%;
+  max-width: 70%;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  padding-right: 5vw;
+  justify-content: center;
+  align-items: flex-start;
+  max-height: 450px;
+  flex: 0 0 60%;
+  max-width: 60%;
+  font-size: min(18px, 2.5vw);
+}
+
+.about-text h1 {
+  /* padding-bottom: 30px; */
+  padding-bottom: calc(20px + 2vmin);
+  font-size: 2em;
+}
+
+.profil-img {
+  height: 400px;
 }

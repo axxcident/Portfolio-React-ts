@@ -27,7 +27,7 @@ function App() {
       </nav>
       {/* Allt i header borde vara i en pages/Home.tsx och det i sin tur innehålla components/PortfolioPage.tsx  */}
       <Routes>
-        <Route path="/" element={<About />} />
+        <Route path="/" element={<About namn="Axel Olivecrona" />} />
       </Routes>
     </div>
   );
