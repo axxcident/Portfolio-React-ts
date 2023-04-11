@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioPage from "../components/PortfolioPage";
+import AboutSection from "../components/AboutSection";
 
 interface AboutProps {
   namn: string;
@@ -8,7 +8,7 @@ interface AboutProps {
 const About = ({ namn }: AboutProps) => {
   return (
     <>
-      <PortfolioPage namn={namn} />
+      <AboutSection namn={namn} />
     </>
   );
 };

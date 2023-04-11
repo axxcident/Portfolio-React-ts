@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
+import TransitionRoutes from "./TransitionRoutes";
 import { Link, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
             <Link to={"/"}>About</Link>
           </li>
           <li>
-            <Link to={"/"}>Portfolio</Link>
+            <Link to={"/portfolio"}>Portfolio</Link>
           </li>
           <li>
             <Link to={"/"}>Services</Link>
@@ -26,9 +28,10 @@ function App() {
         </ul>
       </nav>
       {/* Allt i header borde vara i en pages/Home.tsx och det i sin tur innehålla components/PortfolioPage.tsx  */}
-      <Routes>
+      <TransitionRoutes>
         <Route path="/" element={<About namn="Axel Olivecrona" />} />
-      </Routes>
+        <Route path="/portfolio" element={<Portfolio />} />
+      </TransitionRoutes>
     </div>
   );
 }

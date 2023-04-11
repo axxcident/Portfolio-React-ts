@@ -1,10 +1,10 @@
 import React from "react";
 
-interface PortfolioProps {
+interface AboutProps {
   namn: string;
 }
 
-const PortfolioPage = ({ namn }: PortfolioProps) => {
+const AboutSection = ({ namn }: AboutProps) => {
   return (
     <>
       <section className="portfolio-page">
@@ -31,4 +31,4 @@ const PortfolioPage = ({ namn }: PortfolioProps) => {
   );
 };
 
-export default PortfolioPage;
+export default AboutSection;
