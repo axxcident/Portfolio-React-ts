@@ -3,12 +3,14 @@ import AboutSection from "../components/AboutSection";
 
 interface AboutProps {
   namn: string;
+  tema: boolean;
+  setTema: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const About = ({ namn }: AboutProps) => {
+const About = ({ namn, tema, setTema }: AboutProps) => {
   return (
     <>
-      <AboutSection namn={namn} />
+      <AboutSection namn={namn} tema={tema} setTema={setTema} />
     </>
   );
 };
