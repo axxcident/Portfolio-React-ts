@@ -2,79 +2,148 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-// interface PortfolioProps {
-//   tema?: boolean;
-// }
-// const Wrap = styled.div<PortfolioProps>`
-const Wrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+interface PortfolioProps {
+  bgTheme: boolean;
+}
+
+const Wrap = styled.div<{ bgTheme: boolean }>`
+  /* display: flex; */
   /* flex-direction: column; */
-  width: 80vw;
-  max-height: 80vh;
+  width: 83vw;
+  max-height: 90vh;
 
   .titel {
     width: 50vw;
     position: absolute;
-    top: 25px;
+    top: -55px;
     left: calc(250px + 2vmin);
   }
-  .works {
+
+  .works-album {
     display: flex;
-    flex-direction: column;
-    line-height: 1.5rem;
-    margin: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    /* flex: 0 0 40%;
+    max-width: 40%; */
+    margin: 15px;
   }
 
-  .works h3 {
-    margin-bottom: 2rem;
+  .works-album a {
+    flex: 0 0 30%;
+    max-width: 30%;
+    margin: 10px 20px 20px;
+    text-decoration: none;
   }
-  .works img {
+
+  .works-album a:hover {
+    /* box-shadow: 0px 1px 2px 0px rgba(34, 34, 34, 0.9); */
+    transform: translate(-2px, -2px);
+  }
+
+  .works-album a:hover p {
+    color: #ec1839 !important;
+  }
+
+  .works-album a p {
+    font-weight: 500;
+  }
+
+  .works-album a img {
     background-size: cover;
-    height: auto;
     width: 100%;
+    height: auto;
   }
-  /* @media (max-width: 1000px) {
-.works {
-flex-basis: 50%;
-max-width: 50%;
-flex-basis: 100%;
-max-width: 100%;
-}
-} */
-  /* @media (max-width: 768px) {
-.works {
-flex-basis: 100%;
-max-width: 100%;
-}
-} */
 `;
 
-const Portfolio: React.FC = () => {
+const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
+  let myStyles;
+
+  if (bgTheme) {
+    console.log("bgTheme true");
+    myStyles = {
+      color: "white",
+    };
+  }
+  if (!bgTheme) {
+    console.log("bgTheme false");
+    myStyles = {
+      color: "#151515",
+    };
+  }
   return (
     <>
-      <section className="portfolio-page">
-        <Wrap>
-          <h2 className="titel">Portfolio</h2>
-          <Link to={"/portfoliotodo"}>portfoliotodo</Link>
-          <Link to={"/portfoliotesla"}>portfoliotesla</Link>
-          {/* <div className="works">
-            <h3>Esla Cars</h3>
-            <p>
-              {" "}
-              A dummy Tesla homepage. Replicated with react, typescript, router,
-              redux, styled components, interpolation and props{" "}
-            </p>
-            <div className="work-links">
-              <a href="https://github.com/axxcident/EslaCars">
-                Link to Github Repository
-              </a>
-              <a href="#">Link to Github Site</a>
+      {bgTheme ? (
+        <section className="portfolio-page">
+          <Wrap bgTheme>
+            <div className="titel">
+              <h2>Portfolio</h2>
+              <p>Click to learn more about each project</p>
             </div>
-            <img src="/images/EslaCars.jpg" alt="Ackman" />
-          </div> */}
-        </Wrap>
-      </section>
+            <div className="works-album">
+              <Link to={"/portfoliotodo"}>
+                <p style={myStyles}>Todo App</p>
+                <img src="/images/ReactTsTodo.jpg" alt="Todo app" />
+              </Link>
+              <Link to={"/portfoliotesla"}>
+                <p style={myStyles}>"Tesla" site</p>
+                <img src="/images/EslaCars.jpg" alt="Tesla Cars" />
+              </Link>
+              <Link to={"/"}>
+                <p style={myStyles}>Retail Store</p>
+                <img src="/images/Tjuvgods.jpg" alt="Store" />
+              </Link>
+              <Link to={"/"}>
+                <p style={myStyles}>News Site</p>
+                <img src="/images/DogeNews.jpg" alt="News site" />
+              </Link>
+              <Link to={"/"}>
+                <p style={myStyles}>Social media site</p>
+                <img src="/images/DogeFB.jpg" alt="Social media" />
+              </Link>
+              <Link to={"/"}>
+                <p style={myStyles}>Weather App</p>
+                <img src="/images/WeatherApp.jpg" alt="Weather App" />
+              </Link>
+            </div>
+          </Wrap>
+        </section>
+      ) : (
+        <section className="portfolio-page">
+          <Wrap bgTheme>
+            <div className="titel">
+              <h2>Portfolio</h2>
+              <p>Click to learn more about each project</p>
+            </div>
+            <div className="works-album">
+              <Link to={"/portfoliotodo"}>
+                <p style={myStyles}>Todo App</p>
+                <img src="/images/ReactTsTodo.jpg" alt="Todo app" />
+              </Link>
+              <Link to={"/portfoliotesla"}>
+                <p style={myStyles}>"Tesla" site</p>
+                <img src="/images/EslaCars.jpg" alt="Tesla Cars" />
+              </Link>
+              <Link to={"/"}>
+                <p style={myStyles}>Retail Store</p>
+                <img src="/images/Tjuvgods.jpg" alt="Store" />
+              </Link>
+              <Link to={"/"}>
+                <p style={myStyles}>News Site</p>
+                <img src="/images/DogeNews.jpg" alt="News site" />
+              </Link>
+              <Link to={"/"}>
+                <p style={myStyles}>Social media site</p>
+                <img src="/images/DogeFB.jpg" alt="Social media" />
+              </Link>
+              <Link to={"/"}>
+                <p style={myStyles}>Weather App</p>
+                <img src="/images/WeatherApp.jpg" alt="Weather App" />
+              </Link>
+            </div>
+          </Wrap>
+        </section>
+      )}
     </>
   );
 };

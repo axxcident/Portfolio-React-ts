@@ -52,7 +52,7 @@ const App: React.FC = () => {
             <About tema={bgTheme} setTema={setBgTheme} namn="Axel Olivecrona" />
           }
         />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio" element={<Portfolio bgTheme={bgTheme} />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </TransitionRoutesY>
