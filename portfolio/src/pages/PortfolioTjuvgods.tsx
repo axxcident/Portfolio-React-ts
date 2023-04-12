@@ -113,17 +113,17 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
               </span>
             </Link>
             <div className="container">
-              <h3>Taskify</h3>
+              <h3>Tjuvgods</h3>
               <p>
                 {" "}
-                A handy Todo app that will remember your tasks through you local
-                browser storage. Created with react, typescript, interpolation
-                and props. More to write.{" "}
+                Your favorite retail reseller store where you "Buy back" your
+                previously owned items. Created with Vue.js, Javascript, Vuex,
+                Axios and Bootstrap.{" "}
               </p>
               <div className="work-links">
                 <a
                   style={myStyles}
-                  href="https://github.com/axxcident/react-todo-app"
+                  href="https://github.com/axxcident/Tjuvgods"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -131,7 +131,7 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
                 </a>
                 <a
                   style={myStyles}
-                  href="#https://axxcident.github.io/react-todo-app/"
+                  href="https://axxcident.github.io/Tjuvgods"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -153,7 +153,7 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
       ) : (
         <PortfolioWrap bgTheme>
           <div className="works">
-            <Link to={"/portfolio"}>
+            <Link to={"/portfoliotesla"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-back"
@@ -162,12 +162,12 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
               </span>
             </Link>
             <div className="container">
-              <h3>Taskify</h3>
+              <h3>Tjuvgods</h3>
               <p>
                 {" "}
-                A handy Todo app that will remember your tasks through you local
-                browser storage. Created with react, typescript, interpolation
-                and props. More to write.{" "}
+                Your favorite retail reseller store where you "Buy back" your
+                previously owned items. Created with Vue.js, Javascript, Vuex,
+                Axios and Bootstrap.{" "}
               </p>
               <div className="work-links">
                 <a
@@ -187,9 +187,9 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
                   Link to App
                 </a>
               </div>
-              <img src="/images/ReactTsTodo.jpg" alt="Todo App" />
+              <img src="/images/Tjuvgods.jpg" alt="Retail Store" />
             </div>
-            <Link to={"/portfoliotesla"} style={myStyles}>
+            <Link to={"/portfolio"} style={myStyles}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-forward"
