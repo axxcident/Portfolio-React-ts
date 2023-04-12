@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 interface PortfolioTeslaProps {
-  bgTheme?: boolean;
+  bgTheme: boolean;
 }
 
 // <{ tema: boolean }>
@@ -69,83 +69,141 @@ const PortfolioWrapper = styled.div<PortfolioTeslaProps>`
     justify-content: space-between;
     width: 95%;
   }
-  .testet {
-    background-color: ${({ bgTheme }) => (bgTheme ? "white" : "#fc1515")};
-  }
 
-  .works a {
+  .works a > span {
     text-decoration: none;
-    color: ${(PortfolioTeslaProps) =>
-      PortfolioTeslaProps.bgTheme ? "white" : "#151515"};
+    /* color: ${(PortfolioTeslaProps) =>
+      PortfolioTeslaProps.bgTheme ? "white" : "#151515"}; */
   }
-  .works a:hover {
-    color: #ec1839;
+  .works a:hover span {
+    color: #ec1839 !important;
   }
 
   .work-links a {
     text-decoration: none;
-    color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
+    /* color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")}; */
   }
   .work-links a:hover {
-    color: #ec1839;
+    color: #ec1839 !important;
     text-decoration: underline;
   }
 `;
 
 const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
+  let myStyles;
+
   if (bgTheme) {
     console.log("bgTheme true");
+    myStyles = {
+      color: "white",
+    };
   }
   if (!bgTheme) {
     console.log("bgTheme false");
+    myStyles = {
+      color: "#151515",
+    };
   }
 
   return (
     <>
-      <PortfolioWrapper>
-        <div className="works">
-          <Link to={"/portfoliotodo"}>
-            <span className="material-symbols-outlined arrow-back">
-              arrow_back_ios
-            </span>
-          </Link>
-          <div className="container">
-            <h3>Esla Cars</h3>
-            <p>
-              {" "}
-              A dummy Tesla homepage. Replicated with react, typescript, router,
-              redux, styled components, interpolation and props.{" "}
-            </p>
-            {bgTheme ? (
-              <p className="testet">bgTheme true</p>
-            ) : (
-              <p className="testet">bgTheme false</p>
-            )}
-            <div className="work-links">
-              <a
-                href="https://github.com/axxcident/react-todo-app"
-                target="_blank"
-                rel="noreferrer"
+      {bgTheme ? (
+        <PortfolioWrapper bgTheme>
+          <div className="works">
+            <Link to={"/portfoliotodo"}>
+              <span
+                style={myStyles}
+                className="material-symbols-outlined arrow-back"
               >
-                Link to Github Repository
-              </a>
-              <a
-                href="#https://axxcident.github.io/react-todo-app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Link to App
-              </a>
+                arrow_back_ios
+              </span>
+            </Link>
+            <div className="container">
+              <h3>Esla Cars</h3>
+              <p>
+                {" "}
+                A dummy Tesla homepage. Replicated with react, typescript,
+                router, redux, styled components, interpolation and props.{" "}
+              </p>
+              <div className="work-links">
+                <a
+                  style={myStyles}
+                  href="https://github.com/axxcident/react-todo-app"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Link to Github Repository
+                </a>
+                <a
+                  style={myStyles}
+                  href="#https://axxcident.github.io/react-todo-app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Link to App
+                </a>
+              </div>
+              <img src="/images/EslaCars.jpg" alt="Esla Cars" />
             </div>
-            <img src="/images/EslaCars.jpg" alt="Esla Cars" />
+            <Link to={"/portfolio"}>
+              <span
+                style={myStyles}
+                className="material-symbols-outlined arrow-forward"
+              >
+                arrow_forward_ios
+              </span>
+            </Link>
           </div>
-          <Link to={"/portfolio"}>
-            <span className="material-symbols-outlined arrow-forward">
-              arrow_forward_ios
-            </span>
-          </Link>
-        </div>
-      </PortfolioWrapper>
+        </PortfolioWrapper>
+      ) : (
+        <PortfolioWrapper bgTheme>
+          <div className="works">
+            <Link to={"/portfoliotodo"}>
+              <span
+                style={myStyles}
+                className="material-symbols-outlined arrow-back"
+              >
+                arrow_back_ios
+              </span>
+            </Link>
+            <div className="container">
+              <h3>Esla Cars</h3>
+              <p>
+                {" "}
+                A dummy Tesla homepage. Replicated with react, typescript,
+                router, redux, styled components, interpolation and props.{" "}
+              </p>
+              <div className="work-links">
+                <a
+                  style={myStyles}
+                  href="https://github.com/axxcident/react-todo-app"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Link to Github Repository
+                </a>
+                <a
+                  style={myStyles}
+                  href="#https://axxcident.github.io/react-todo-app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Link to App
+                </a>
+              </div>
+              <img src="/images/EslaCars.jpg" alt="Esla Cars" />
+            </div>
+            <Link to={"/portfolio"}>
+              <span
+                style={myStyles}
+                className="material-symbols-outlined arrow-forward"
+              >
+                arrow_forward_ios
+              </span>
+            </Link>
+          </div>
+        </PortfolioWrapper>
+      )}
     </>
   );
 };

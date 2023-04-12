@@ -16,7 +16,7 @@ interface PortfolioTodoProps {
 // const ButtonRight = styled(ButtonLeft)<{ btnStyle: boolean }>`
 // background-color: ${(props) => (props.btnStyle ? "#d18119" : "#19d147")};
 
-const PortfolioWrap: any = styled.div<PortfolioTodoProps>`
+const PortfolioWrap = styled.div<PortfolioTodoProps>`
   width: 75%;
   height: 90vh;
   margin-left: 300px;
@@ -76,25 +76,24 @@ const PortfolioWrap: any = styled.div<PortfolioTodoProps>`
     width: 95%;
   }
 
-  .testet {
+  /* .testet {
     background-color: ${({ bgTheme }) => (bgTheme ? "white" : "#fc1515")};
-  }
-
+  } */
   /* bgTheme ? "#151515" : "white" */
   .works a > span {
     text-decoration: none;
-    color: ${(PortfolioTodoProps) =>
-      PortfolioTodoProps.bgTheme ? "white" : "#151515"};
+    /* color: ${(PortfolioTodoProps) =>
+      PortfolioTodoProps.bgTheme ? "white" : "#151515"}; */
   }
   .works a:hover span {
-    color: #ec1839;
+    color: #ec1839 !important;
   }
   .work-links a {
     text-decoration: none;
-    color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
+    /* color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")}; */
   }
   .work-links a:hover {
-    color: #ec1839;
+    color: #ec1839 !important;
     text-decoration: underline;
   }
 `;
@@ -184,11 +183,6 @@ const PortfolioTodo: React.FC<PortfolioTodoProps> = ({ bgTheme }) => {
                 browser storage. Created with react, typescript, interpolation
                 and props. More to write.{" "}
               </p>
-              {bgTheme ? (
-                <p className="testet">bgTheme true</p>
-              ) : (
-                <p className="testet">bgTheme false</p>
-              )}
               <div className="work-links">
                 <a
                   style={myStyles}
