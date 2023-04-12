@@ -13,6 +13,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import PortfolioTesla from "./pages/PortfolioTesla";
 import PortfolioTodo from "./pages/PortfolioTodo";
+import PortfolioTjuvgods from "./pages/PortfolioTjuvgods";
 
 const App: React.FC = () => {
   const [bgTheme, setBgTheme] = useState(false);
@@ -83,6 +84,10 @@ const App: React.FC = () => {
         <Route
           path="/portfoliotodo"
           element={<PortfolioTodo bgTheme={bgTheme} />}
+        />
+        <Route
+          path="/portfoliotjuvgods"
+          element={<PortfolioTjuvgods bgTheme={bgTheme} />}
         />
       </TransitionRoutesX>
     </Appen>

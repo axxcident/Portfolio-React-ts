@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-interface PortfolioTodoProps {
+interface PortfolioTjuvgodsProps {
   bgTheme: boolean;
 }
 
-const PortfolioWrap = styled.div<PortfolioTodoProps>`
+const PortfolioWrap = styled.div<PortfolioTjuvgodsProps>`
   width: 75%;
   height: 90vh;
   margin-left: 300px;
@@ -84,7 +84,7 @@ const PortfolioWrap = styled.div<PortfolioTodoProps>`
   }
 `;
 
-const PortfolioTodo: React.FC<PortfolioTodoProps> = ({ bgTheme }) => {
+const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
   let myStyles;
 
   if (bgTheme) {
@@ -104,56 +104,7 @@ const PortfolioTodo: React.FC<PortfolioTodoProps> = ({ bgTheme }) => {
       {bgTheme ? (
         <PortfolioWrap bgTheme>
           <div className="works">
-            <Link to={"/portfolio"}>
-              <span
-                style={myStyles}
-                className="material-symbols-outlined arrow-back"
-              >
-                arrow_back_ios
-              </span>
-            </Link>
-            <div className="container">
-              <h3>Taskify</h3>
-              <p>
-                {" "}
-                A handy Todo app that will remember your tasks through you local
-                browser storage. Created with react, typescript, interpolation
-                and props. More to write.{" "}
-              </p>
-              <div className="work-links">
-                <a
-                  style={myStyles}
-                  href="https://github.com/axxcident/react-todo-app"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Link to Github Repository
-                </a>
-                <a
-                  style={myStyles}
-                  href="https://axxcident.github.io/react-todo-app/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Link to App
-                </a>
-              </div>
-              <img src="/images/ReactTsTodo.jpg" alt="Todo App" />
-            </div>
             <Link to={"/portfoliotesla"}>
-              <span
-                style={myStyles}
-                className="material-symbols-outlined arrow-forward"
-              >
-                arrow_forward_ios
-              </span>
-            </Link>
-          </div>
-        </PortfolioWrap>
-      ) : (
-        <PortfolioWrap bgTheme>
-          <div className="works">
-            <Link to={"/portfolio"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-back"
@@ -187,6 +138,55 @@ const PortfolioTodo: React.FC<PortfolioTodoProps> = ({ bgTheme }) => {
                   Link to App
                 </a>
               </div>
+              <img src="/images/Tjuvgods.jpg" alt="Retail Store" />
+            </div>
+            <Link to={"/portfolio"}>
+              <span
+                style={myStyles}
+                className="material-symbols-outlined arrow-forward"
+              >
+                arrow_forward_ios
+              </span>
+            </Link>
+          </div>
+        </PortfolioWrap>
+      ) : (
+        <PortfolioWrap bgTheme>
+          <div className="works">
+            <Link to={"/portfolio"}>
+              <span
+                style={myStyles}
+                className="material-symbols-outlined arrow-back"
+              >
+                arrow_back_ios
+              </span>
+            </Link>
+            <div className="container">
+              <h3>Taskify</h3>
+              <p>
+                {" "}
+                A handy Todo app that will remember your tasks through you local
+                browser storage. Created with react, typescript, interpolation
+                and props. More to write.{" "}
+              </p>
+              <div className="work-links">
+                <a
+                  style={myStyles}
+                  href="https://github.com/axxcident/Tjuvgods"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Link to Github Repository
+                </a>
+                <a
+                  style={myStyles}
+                  href="https://axxcident.github.io/Tjuvgods"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Link to App
+                </a>
+              </div>
               <img src="/images/ReactTsTodo.jpg" alt="Todo App" />
             </div>
             <Link to={"/portfoliotesla"} style={myStyles}>
@@ -204,4 +204,4 @@ const PortfolioTodo: React.FC<PortfolioTodoProps> = ({ bgTheme }) => {
   );
 };
 
-export default PortfolioTodo;
+export default PortfolioTjuvgods;

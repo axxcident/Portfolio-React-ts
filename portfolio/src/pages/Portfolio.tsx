@@ -93,7 +93,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
                 <p style={myStyles}>"Tesla" site</p>
                 <img src="/images/EslaCars.jpg" alt="Tesla Cars" />
               </Link>
-              <Link to={"/"}>
+              <Link to={"/portfoliotjuvgods"}>
                 <p style={myStyles}>Retail Store</p>
                 <img src="/images/Tjuvgods.jpg" alt="Store" />
               </Link>
