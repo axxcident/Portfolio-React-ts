@@ -1,11 +1,10 @@
-import { Routes, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 
 interface TransitionWrapperProps {
   children: React.ReactNode;
   tema?: boolean;
-  setTema?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const pageVariants = {
@@ -29,23 +28,24 @@ const pageTransition = {
   duration: 0.8,
 };
 
-// Ta bort children type om inget annat
 const TransitionRoutesX = ({ children, tema }: TransitionWrapperProps) => {
   const location = useLocation();
-
   return (
     <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={pageTransition}
-      >
-        <Routes location={location}>{[children, tema]}</Routes>
-      </motion.div>
+      {React.Children.map(children, (child) => (
+        <motion.div
+          key={location.pathname}
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={pageVariants}
+          transition={pageTransition}
+        >
+          {React.cloneElement(child as React.ReactElement<any>, { tema })}
+        </motion.div>
+      ))}
     </AnimatePresence>
   );
 };
+
 export default TransitionRoutesX;

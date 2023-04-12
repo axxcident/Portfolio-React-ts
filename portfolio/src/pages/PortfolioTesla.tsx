@@ -3,62 +3,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 interface PortfolioTeslaProps {
-  tema?: boolean;
-  setTema?: React.Dispatch<React.SetStateAction<boolean>>;
+  bgTheme?: boolean;
 }
-
-const PortfolioTesla = ({ tema, setTema }: PortfolioTeslaProps) => {
-  return (
-    <>
-      <PortfolioWrap tema>
-        <div className="works">
-          <Link to={"/portfoliotodo"}>
-            <span className="material-symbols-outlined arrow-back">
-              arrow_back_ios
-            </span>
-          </Link>
-          <div className="container">
-            <h3>Esla Cars</h3>
-            <p>
-              {" "}
-              A dummy Tesla homepage. Replicated with react, typescript, router,
-              redux, styled components, interpolation and props.{" "}
-            </p>
-            {tema ? <p>Tema true</p> : <p>Tema false</p>}
-            <div className="work-links">
-              <a
-                href="https://github.com/axxcident/react-todo-app"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Link to Github Repository
-              </a>
-              <a
-                href="#https://axxcident.github.io/react-todo-app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Link to App
-              </a>
-            </div>
-            <img src="/images/EslaCars.jpg" alt="Esla Cars" />
-          </div>
-          <Link to={"/portfolio"}>
-            <span className="material-symbols-outlined arrow-forward">
-              arrow_forward_ios
-            </span>
-          </Link>
-        </div>
-      </PortfolioWrap>
-    </>
-  );
-};
-
-export default PortfolioTesla;
 
 // <{ tema: boolean }>
 // <PortfolioTodoProps>
-const PortfolioWrap = styled.div<{ tema: boolean }>`
+// :React.FC<PortfolioTeslaProps>
+// <{ bgTheme: PortfolioTeslaProps }>
+const PortfolioWrapper = styled.div<PortfolioTeslaProps>`
   width: 75%;
   height: 90vh;
   margin-left: 300px;
@@ -117,10 +69,14 @@ const PortfolioWrap = styled.div<{ tema: boolean }>`
     justify-content: space-between;
     width: 95%;
   }
+  .testet {
+    background-color: ${({ bgTheme }) => (bgTheme ? "white" : "#fc1515")};
+  }
 
   .works a {
     text-decoration: none;
-    color: ${({ tema }) => (tema ? "white" : "#151515")};
+    color: ${(PortfolioTeslaProps) =>
+      PortfolioTeslaProps.bgTheme ? "white" : "#151515"};
   }
   .works a:hover {
     color: #ec1839;
@@ -128,10 +84,70 @@ const PortfolioWrap = styled.div<{ tema: boolean }>`
 
   .work-links a {
     text-decoration: none;
-    color: ${({ tema }) => (tema ? "white" : "#151515")};
+    color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
   }
   .work-links a:hover {
     color: #ec1839;
     text-decoration: underline;
   }
 `;
+
+const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
+  if (bgTheme) {
+    console.log("bgTheme true");
+  }
+  if (!bgTheme) {
+    console.log("bgTheme false");
+  }
+
+  return (
+    <>
+      <PortfolioWrapper>
+        <div className="works">
+          <Link to={"/portfoliotodo"}>
+            <span className="material-symbols-outlined arrow-back">
+              arrow_back_ios
+            </span>
+          </Link>
+          <div className="container">
+            <h3>Esla Cars</h3>
+            <p>
+              {" "}
+              A dummy Tesla homepage. Replicated with react, typescript, router,
+              redux, styled components, interpolation and props.{" "}
+            </p>
+            {bgTheme ? (
+              <p className="testet">bgTheme true</p>
+            ) : (
+              <p className="testet">bgTheme false</p>
+            )}
+            <div className="work-links">
+              <a
+                href="https://github.com/axxcident/react-todo-app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Link to Github Repository
+              </a>
+              <a
+                href="#https://axxcident.github.io/react-todo-app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Link to App
+              </a>
+            </div>
+            <img src="/images/EslaCars.jpg" alt="Esla Cars" />
+          </div>
+          <Link to={"/portfolio"}>
+            <span className="material-symbols-outlined arrow-forward">
+              arrow_forward_ios
+            </span>
+          </Link>
+        </div>
+      </PortfolioWrapper>
+    </>
+  );
+};
+
+export default PortfolioTesla;

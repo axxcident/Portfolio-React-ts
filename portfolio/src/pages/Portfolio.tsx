@@ -2,12 +2,55 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-interface PortfolioProps {
-  tema?: boolean;
-  setTema?: React.Dispatch<React.SetStateAction<boolean>>;
-}
+// interface PortfolioProps {
+//   tema?: boolean;
+// }
+// const Wrap = styled.div<PortfolioProps>`
+const Wrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  width: 80vw;
+  max-height: 80vh;
 
-const Portfolio = ({ tema, setTema }: PortfolioProps) => {
+  .titel {
+    width: 50vw;
+    position: absolute;
+    top: 25px;
+    left: calc(250px + 2vmin);
+  }
+  .works {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5rem;
+    margin: 30px;
+  }
+
+  .works h3 {
+    margin-bottom: 2rem;
+  }
+  .works img {
+    background-size: cover;
+    height: auto;
+    width: 100%;
+  }
+  /* @media (max-width: 1000px) {
+.works {
+flex-basis: 50%;
+max-width: 50%;
+flex-basis: 100%;
+max-width: 100%;
+}
+} */
+  /* @media (max-width: 768px) {
+.works {
+flex-basis: 100%;
+max-width: 100%;
+}
+} */
+`;
+
+const Portfolio: React.FC = () => {
   return (
     <>
       <section className="portfolio-page">
@@ -37,47 +80,3 @@ const Portfolio = ({ tema, setTema }: PortfolioProps) => {
 };
 
 export default Portfolio;
-
-const Wrap = styled.div<PortfolioProps>`
-  display: flex;
-  flex-wrap: wrap;
-  /* flex-direction: column; */
-  width: 80vw;
-  max-height: 80vh;
-
-  .titel {
-    width: 50vw;
-    position: absolute;
-    top: 25px;
-    left: calc(250px + 2vmin);
-  }
-  .works {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.5rem;
-    margin: 30px;
-  }
-
-  .works h3 {
-    margin-bottom: 2rem;
-  }
-  .works img {
-    background-size: cover;
-    height: auto;
-    width: 100%;
-  }
-  /* @media (max-width: 1000px) {
-    .works {
-      flex-basis: 50%;
-      max-width: 50%;
-      flex-basis: 100%;
-      max-width: 100%;
-    }
-  } */
-  /* @media (max-width: 768px) {
-    .works {
-      flex-basis: 100%;
-      max-width: 100%;
-    }
-  } */
-`;

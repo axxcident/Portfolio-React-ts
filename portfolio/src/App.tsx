@@ -3,17 +3,17 @@ import React, { useState } from "react";
 import "./App.css";
 import styled from "styled-components";
 // Transition between pages & pages
-import TransitionRoutesY from "./TransitionRoutesY";
-import { Link, Route } from "react-router-dom";
+// import TransitionRoutesY from "./TransitionRoutesY";
+// import TransitionRoutesX from "./TransitionRoutesX";
+import { Link, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
-import TransitionRoutesX from "./TransitionRoutesX";
 import PortfolioTesla from "./pages/PortfolioTesla";
 import PortfolioTodo from "./pages/PortfolioTodo";
 
-function App() {
+const App: React.FC = () => {
   const [bgTheme, setBgTheme] = useState(false);
 
   return (
@@ -43,34 +43,39 @@ function App() {
           </li>
         </ul>
       </NavBar>
-      {/* Routes */}
-      <TransitionRoutesY>
+      {/* Routes | <TransitionRoutesY> */}
+      <Routes>
         <Route
           path="/"
           element={
             <About tema={bgTheme} setTema={setBgTheme} namn="Axel Olivecrona" />
           }
         />
-        <Route
-          path="/portfolio"
-          element={<Portfolio tema={bgTheme} setTema={setBgTheme} />}
-        />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
-      </TransitionRoutesY>
-      <TransitionRoutesX tema={bgTheme} setTema={setBgTheme}>
         <Route
           path="/portfoliotesla"
-          element={<PortfolioTesla tema={bgTheme} setTema={setBgTheme} />}
+          element={<PortfolioTesla bgTheme={bgTheme} />}
         />
         <Route
           path="/portfoliotodo"
-          element={<PortfolioTodo tema={bgTheme} setTema={setBgTheme} />}
+          element={<PortfolioTodo bgTheme={bgTheme} />}
         />
-      </TransitionRoutesX>
+      </Routes>
+      {/* <TransitionRoutesX tema={bgTheme}>
+        <Route
+          path="/portfoliotesla"
+          element={<PortfolioTesla tema={bgTheme} />}
+        />
+        <Route
+          path="/portfoliotodo"
+          element={<PortfolioTodo tema={bgTheme} />}
+        />
+      </TransitionRoutesX> */}
     </Appen>
   );
-}
+};
 
 export default App;
 
