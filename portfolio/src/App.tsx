@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import "./App.css";
 import styled from "styled-components";
 // Transition between pages & pages
-// import TransitionRoutesY from "./TransitionRoutesY";
-// import TransitionRoutesX from "./TransitionRoutesX";
+import TransitionRoutesY from "./TransitionRoutesY";
+import TransitionRoutesX from "./TransitionRoutesX";
 import { Link, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
@@ -44,7 +44,18 @@ const App: React.FC = () => {
         </ul>
       </NavBar>
       {/* Routes | <TransitionRoutesY> */}
-      <Routes>
+      <TransitionRoutesY>
+        <Route
+          path="/"
+          element={
+            <About tema={bgTheme} setTema={setBgTheme} namn="Axel Olivecrona" />
+          }
+        />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </TransitionRoutesY>
+      {/* <Routes>
         <Route
           path="/"
           element={
@@ -62,17 +73,17 @@ const App: React.FC = () => {
           path="/portfoliotodo"
           element={<PortfolioTodo bgTheme={bgTheme} />}
         />
-      </Routes>
-      {/* <TransitionRoutesX tema={bgTheme}>
+      </Routes> */}
+      <TransitionRoutesX>
         <Route
           path="/portfoliotesla"
-          element={<PortfolioTesla tema={bgTheme} />}
+          element={<PortfolioTesla bgTheme={bgTheme} />}
         />
         <Route
           path="/portfoliotodo"
-          element={<PortfolioTodo tema={bgTheme} />}
+          element={<PortfolioTodo bgTheme={bgTheme} />}
         />
-      </TransitionRoutesX> */}
+      </TransitionRoutesX>
     </Appen>
   );
 };
