@@ -17,6 +17,7 @@ const PortfolioWrapper = styled.div<PortfolioTeslaProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 200;
 
   .arrow-back {
     width: 80px;

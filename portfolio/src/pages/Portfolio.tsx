@@ -12,11 +12,14 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
   margin-top: 2rem;
   width: 83vw;
   max-height: 90vh;
+  z-index: 900;
+
+  /* Skapa Annorlunda css för Wrap när viewport är mindre än 1430px*/
 
   .titel {
     width: 50vw;
     position: absolute;
-    top: 0px;
+    top: 55px;
     left: calc(250px + 2vmin);
   }
 
@@ -27,7 +30,7 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
     width: 100%;
     /* flex: 0 0 40%;
     max-width: 40%; */
-    margin: 15px;
+    margin: 100px 15px 15px 15px;
   }
 
   .works-album a {

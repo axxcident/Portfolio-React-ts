@@ -6,16 +6,6 @@ interface PortfolioTodoProps {
   bgTheme: boolean;
 }
 
-// <{ tema?: boolean }>
-// <PortfolioTodoProps>
-// <{ tema?: PortfolioTodoProps }>
-
-// const Wrap = styled.div<SectionProps>`
-// background-image: ${(SectionProps) => `url("images/${SectionProps.bgImg}")`};
-
-// const ButtonRight = styled(ButtonLeft)<{ btnStyle: boolean }>`
-// background-color: ${(props) => (props.btnStyle ? "#d18119" : "#19d147")};
-
 const PortfolioWrap = styled.div<PortfolioTodoProps>`
   width: 75%;
   height: 90vh;
@@ -23,6 +13,8 @@ const PortfolioWrap = styled.div<PortfolioTodoProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 900;
 
   .arrow-back {
     width: 80px;
@@ -76,14 +68,8 @@ const PortfolioWrap = styled.div<PortfolioTodoProps>`
     width: 95%;
   }
 
-  /* .testet {
-    background-color: ${({ bgTheme }) => (bgTheme ? "white" : "#fc1515")};
-  } */
-  /* bgTheme ? "#151515" : "white" */
   .works a > span {
     text-decoration: none;
-    /* color: ${(PortfolioTodoProps) =>
-      PortfolioTodoProps.bgTheme ? "white" : "#151515"}; */
   }
   .works a:hover span {
     color: #ec1839 !important;
@@ -214,51 +200,6 @@ const PortfolioTodo: React.FC<PortfolioTodoProps> = ({ bgTheme }) => {
           </div>
         </PortfolioWrap>
       )}
-      {/* <PortfolioWrap bgTheme>
-        <div className="works">
-          <Link to={"/portfolio"}>
-            <span className="material-symbols-outlined arrow-back">
-              arrow_back_ios
-            </span>
-          </Link>
-          <div className="container">
-            <h3>Taskify</h3>
-            <p>
-              {" "}
-              A handy Todo app that will remember your tasks through you local
-              browser storage. Created with react, typescript, interpolation and
-              props. More to write.{" "}
-            </p>
-            {bgTheme ? (
-              <p className="testet">bgTheme true</p>
-            ) : (
-              <p className="testet">bgTheme false</p>
-            )}
-            <div className="work-links">
-              <a
-                href="https://github.com/axxcident/react-todo-app"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Link to Github Repository
-              </a>
-              <a
-                href="#https://axxcident.github.io/react-todo-app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Link to App
-              </a>
-            </div>
-            <img src="/images/ReactTsTodo.jpg" alt="Todo App" />
-          </div>
-          <Link to={"/portfoliotesla"}>
-            <span className="material-symbols-outlined arrow-forward">
-              arrow_forward_ios
-            </span>
-          </Link>
-        </div>
-      </PortfolioWrap> */}
     </>
   );
 };

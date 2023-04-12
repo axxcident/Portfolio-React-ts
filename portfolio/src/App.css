@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 * {
@@ -31,12 +31,12 @@ body {
 
 /* Navbar */
 .navbar {
-  height: 105vh;
+  height: 100%;
   width: 220px;
   /* width: 25vw; */
   /* max-width: 230px; */
   /* position: absolute; */
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   /* bg dark 100 */
@@ -97,7 +97,7 @@ body {
   margin: 0 0 0 calc(260px + 2vmin);
   display: flex;
   flex-direction: row;
-  height: 83vh;
+  height: 100vh;
   align-items: center;
 }
 
@@ -146,13 +146,28 @@ body {
 }
 
 /* transitionroutes */
-#root > div > div:nth-child(2) {
+/* #root > div > div:nth-child(2) {
   position: absolute;
   top: 90px;
   left: 0px;
   width: 98%;
   height: 92%;
+  z-index: 2;
 }
 #root > div > div:nth-child(3) {
-  width: 99%;
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  width: 98%;
+  height: 92%;
+  z-index: 1;
+} */
+
+#root > div > div:nth-child(2) {
+  display: flex;
+  width: 98%;
+}
+#root > div > div:nth-child(3) {
+  display: flex;
+  width: 98%;
 }
