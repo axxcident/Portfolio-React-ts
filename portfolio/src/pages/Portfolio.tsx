@@ -9,13 +9,14 @@ interface PortfolioProps {
 const Wrap = styled.div<{ bgTheme: boolean }>`
   /* display: flex; */
   /* flex-direction: column; */
+  margin-top: 2rem;
   width: 83vw;
   max-height: 90vh;
 
   .titel {
     width: 50vw;
     position: absolute;
-    top: -55px;
+    top: 0px;
     left: calc(250px + 2vmin);
   }
 
@@ -30,8 +31,8 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
   }
 
   .works-album a {
-    flex: 0 0 30%;
-    max-width: 30%;
+    flex: 0 0 29%;
+    max-width: 29%;
     margin: 10px 20px 20px;
     text-decoration: none;
   }

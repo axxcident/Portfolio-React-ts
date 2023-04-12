@@ -17,7 +17,7 @@ const AboutSection: React.FC<AboutProps> = ({
       <Section className="about-page">
         <div className="about-text">
           <h1>
-            Hello, my name is <span>{namn}</span>
+            Hello, my name is <span className="namnet">{namn}</span>
           </h1>
           {/* <h2>I'm a Web developer</h2> lägg till dynamiskt skrivande text */}
           <p>
