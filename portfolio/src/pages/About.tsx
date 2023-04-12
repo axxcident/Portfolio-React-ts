@@ -7,7 +7,7 @@ interface AboutProps {
   setTema: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const About = ({ namn, tema, setTema }: AboutProps) => {
+const About: React.FC<AboutProps> = ({ namn, tema, setTema }: AboutProps) => {
   return (
     <>
       <AboutSection namn={namn} tema={tema} setTema={setTema} />

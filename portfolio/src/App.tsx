@@ -5,7 +5,8 @@ import styled from "styled-components";
 // Transition between pages & pages
 import TransitionRoutesY from "./TransitionRoutesY";
 import TransitionRoutesX from "./TransitionRoutesX";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
+// import { Routes } from "react-router-dom";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";

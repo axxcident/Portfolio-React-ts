@@ -7,7 +7,11 @@ interface AboutProps {
   setTema: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AboutSection = ({ namn, tema, setTema }: AboutProps) => {
+const AboutSection: React.FC<AboutProps> = ({
+  namn,
+  tema,
+  setTema,
+}: AboutProps) => {
   return (
     <>
       <Section className="portfolio-page">
