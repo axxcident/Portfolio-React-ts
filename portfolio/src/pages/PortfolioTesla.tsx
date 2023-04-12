@@ -146,7 +146,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
               </div>
               <img src="/images/EslaCars.jpg" alt="Esla Cars" />
             </div>
-            <Link to={"/portfolio"}>
+            <Link to={"/portfoliotjuvgods"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-forward"
@@ -194,7 +194,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
               </div>
               <img src="/images/EslaCars.jpg" alt="Esla Cars" />
             </div>
-            <Link to={"/portfolio"}>
+            <Link to={"/portfoliotjuvgods"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-forward"

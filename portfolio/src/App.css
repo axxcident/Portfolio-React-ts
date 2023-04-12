@@ -104,6 +104,7 @@ body {
 .namnet {
   font-style: italic;
   color: #393939;
+  text-shadow: 1px 1px 1px #393939;
 }
 
 .about-text {
