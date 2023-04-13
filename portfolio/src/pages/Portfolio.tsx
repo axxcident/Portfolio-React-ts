@@ -57,6 +57,7 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
     background-size: cover;
     width: 100%;
     height: auto;
+    border-radius: 10px;
   }
 `;
 
@@ -105,7 +106,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
                 <p style={myStyles}>Social media site</p>
                 <img src="/images/DogeFB.jpg" alt="Social media" />
               </Link>
-              <Link to={"/"}>
+              <Link to={"/portfolioweather"}>
                 <p style={myStyles}>Weather App</p>
                 <img src="/images/WeatherApp.jpg" alt="Weather App" />
               </Link>
@@ -140,7 +141,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
                 <p style={myStyles}>Social media site</p>
                 <img src="/images/DogeFB.jpg" alt="Social media" />
               </Link>
-              <Link to={"/"}>
+              <Link to={"/portfolioweather"}>
                 <p style={myStyles}>Weather App</p>
                 <img src="/images/WeatherApp.jpg" alt="Weather App" />
               </Link>

@@ -140,7 +140,7 @@ const PortfolioDogeFB: React.FC<PortfolioDogeFBProps> = ({ bgTheme }) => {
               </div>
               <img src="/images/DogeFBwide.jpg" alt="Retail Store" />
             </div>
-            <Link to={"/portfolio"}>
+            <Link to={"/portfolioweather"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-forward"
@@ -189,7 +189,7 @@ const PortfolioDogeFB: React.FC<PortfolioDogeFBProps> = ({ bgTheme }) => {
               </div>
               <img src="/images/DogeFBwide.jpg" alt="Retail Store" />
             </div>
-            <Link to={"/portfolio"}>
+            <Link to={"/portfolioweather"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-forward"

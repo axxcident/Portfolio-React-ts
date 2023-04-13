@@ -16,6 +16,7 @@ import PortfolioTodo from "./pages/PortfolioTodo";
 import PortfolioTjuvgods from "./pages/PortfolioTjuvgods";
 import PortfolioDogeNews from "./pages/PortfolioDogeNews";
 import PortfolioDogeFB from "./pages/PortfolioDogeFB";
+import PortfolioWeather from "./pages/PortfolioWeather";
 
 const App: React.FC = () => {
   const [bgTheme, setBgTheme] = useState(false);
@@ -98,6 +99,10 @@ const App: React.FC = () => {
         <Route
           path="/portfoliodogefb"
           element={<PortfolioDogeFB bgTheme={bgTheme} />}
+        />
+        <Route
+          path="/portfolioweather"
+          element={<PortfolioWeather bgTheme={bgTheme} />}
         />
       </TransitionRoutesX>
     </Appen>

@@ -180,7 +180,7 @@ const PortfolioTodo: React.FC<PortfolioTodoProps> = ({ bgTheme }) => {
                 </a>
                 <a
                   style={myStyles}
-                  href="#https://axxcident.github.io/react-todo-app/"
+                  href="https://axxcident.github.io/react-todo-app/"
                   target="_blank"
                   rel="noreferrer"
                 >
