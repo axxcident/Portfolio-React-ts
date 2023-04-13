@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-interface PortfolioDogeNewsProps {
+interface PortfolioDogeFBProps {
   bgTheme: boolean;
 }
 
-const PortfolioWrap = styled.div<PortfolioDogeNewsProps>`
+const PortfolioWrap = styled.div<PortfolioDogeFBProps>`
   width: 75%;
   height: 90vh;
   margin-left: 300px;
@@ -68,33 +68,23 @@ const PortfolioWrap = styled.div<PortfolioDogeNewsProps>`
     width: 95%;
   }
 
-  /* Pilar höger/vänster */
   .works a > span {
     text-decoration: none;
   }
   .works a:hover span {
     color: #ec1839 !important;
   }
-  /* TextLänkar */
-  #GithubLink {
-    text-decoration: line-through;
-  }
-  #SiteLink {
+  .work-links a {
     text-decoration: none;
+    /* color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")}; */
   }
-  /* .work-links a {
-    text-decoration: line-through;
-    text-decoration: none;
-    color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
-  } */
-
   .work-links a:hover {
     color: #ec1839 !important;
     text-decoration: underline;
   }
 `;
 
-const PortfolioDogeNews: React.FC<PortfolioDogeNewsProps> = ({ bgTheme }) => {
+const PortfolioDogeFB: React.FC<PortfolioDogeFBProps> = ({ bgTheme }) => {
   let myStyles;
 
   if (bgTheme) {
@@ -114,7 +104,7 @@ const PortfolioDogeNews: React.FC<PortfolioDogeNewsProps> = ({ bgTheme }) => {
       {bgTheme ? (
         <PortfolioWrap bgTheme>
           <div className="works">
-            <Link to={"/portfoliotjuvgods"}>
+            <Link to={"/portfoliodogenews"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-back"
@@ -123,36 +113,34 @@ const PortfolioDogeNews: React.FC<PortfolioDogeNewsProps> = ({ bgTheme }) => {
               </span>
             </Link>
             <div className="container">
-              <h3>Tjuvgods</h3>
+              <h3>Doge FB</h3>
               <p>
                 {" "}
-                Your trusted news site from a good boi. SPA created with Vue.js.
-                Only Dev will work, API fetching for dev only. Dependencies:
-                vuex, axios, vue-router and bootstrap.{" "}
+                Your new favorite social media site where all users are
+                definitively real people. Built with vanilla Javascript, HTML
+                and CSS.{" "}
               </p>
               <div className="work-links">
                 <a
-                  id="GithubLink"
                   style={myStyles}
-                  href="https://github.com/axxcident/Doge-News"
+                  href="https://github.com/axxcident/DogsGo2Heaven"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Link to Github Repository
                 </a>
                 <a
-                  id="SiteLink"
                   style={myStyles}
-                  href="https://axxcident.github.io/Doge-News/"
+                  href="https://axxcident.github.io/DogsGo2Heaven/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Link to App
                 </a>
               </div>
-              <img src="/images/DogeNewss.jpg" alt="News Site" />
+              <img src="/images/DogeFBwide.jpg" alt="Retail Store" />
             </div>
-            <Link to={"/portfoliodogefb"}>
+            <Link to={"/portfolio"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-forward"
@@ -165,7 +153,7 @@ const PortfolioDogeNews: React.FC<PortfolioDogeNewsProps> = ({ bgTheme }) => {
       ) : (
         <PortfolioWrap bgTheme>
           <div className="works">
-            <Link to={"/portfoliotjuvgods"}>
+            <Link to={"/portfoliodogenews"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-back"
@@ -174,36 +162,34 @@ const PortfolioDogeNews: React.FC<PortfolioDogeNewsProps> = ({ bgTheme }) => {
               </span>
             </Link>
             <div className="container">
-              <h3>Doge News</h3>
+              <h3>Doge FB</h3>
               <p>
                 {" "}
-                Your trusted news site from a good boi. SPA created with Vue.js.
-                Only Dev will work, API fetching for dev only. Dependencies:
-                vuex, axios, vue-router and bootstrap.{" "}
+                Your new favorite social media site where all users are
+                definitively real people. Built with vanilla Javascript, HTML
+                and CSS.{" "}
               </p>
               <div className="work-links">
                 <a
-                  id="GithubLink"
                   style={myStyles}
-                  href="https://github.com/axxcident/Doge-News"
+                  href="https://github.com/axxcident/DogsGo2Heaven"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Link to Github Repository
                 </a>
                 <a
-                  id="SiteLink"
                   style={myStyles}
-                  href="https://axxcident.github.io/Doge-News/"
+                  href="https://axxcident.github.io/DogsGo2Heaven/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Link to App
                 </a>
               </div>
-              <img src="/images/DogeNewss.jpg" alt="News Site" />
+              <img src="/images/DogeFBwide.jpg" alt="Retail Store" />
             </div>
-            <Link to={"/portfoliodogefb"}>
+            <Link to={"/portfolio"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-forward"
@@ -218,4 +204,4 @@ const PortfolioDogeNews: React.FC<PortfolioDogeNewsProps> = ({ bgTheme }) => {
   );
 };
 
-export default PortfolioDogeNews;
+export default PortfolioDogeFB;

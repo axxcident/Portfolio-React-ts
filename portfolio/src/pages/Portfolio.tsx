@@ -101,7 +101,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
                 <p style={myStyles}>News Site</p>
                 <img src="/images/DogeNews.jpg" alt="News site" />
               </Link>
-              <Link to={"/"}>
+              <Link to={"/portfoliodogefb"}>
                 <p style={myStyles}>Social media site</p>
                 <img src="/images/DogeFB.jpg" alt="Social media" />
               </Link>
@@ -136,7 +136,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
                 <p style={myStyles}>News Site</p>
                 <img src="/images/DogeNews.jpg" alt="News site" />
               </Link>
-              <Link to={"/"}>
+              <Link to={"/portfoliodogefb"}>
                 <p style={myStyles}>Social media site</p>
                 <img src="/images/DogeFB.jpg" alt="Social media" />
               </Link>
