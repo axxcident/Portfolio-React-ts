@@ -38,16 +38,17 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
     max-width: 29%;
     margin: 10px 20px 20px;
     text-decoration: none;
+    border-radius: 15px;
   }
 
   .works-album a:hover {
-    /* box-shadow: 0px 1px 2px 0px rgba(34, 34, 34, 0.9); */
+    box-shadow: 0px 0px 20px 0px rgba(34, 34, 34, 0.9);
     transform: translate(-2px, -2px);
   }
 
-  .works-album a:hover p {
+  /* .works-album a:hover p {
     color: #ec1839 !important;
-  }
+  } */
 
   .works-album a p {
     font-weight: 500;
