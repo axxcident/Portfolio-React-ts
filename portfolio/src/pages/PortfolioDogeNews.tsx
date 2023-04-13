@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-interface PortfolioTjuvgodsProps {
+interface PortfolioDogeNewsProps {
   bgTheme: boolean;
 }
 
-const PortfolioWrap = styled.div<PortfolioTjuvgodsProps>`
+const PortfolioWrap = styled.div<PortfolioDogeNewsProps>`
   width: 75%;
   height: 90vh;
   margin-left: 300px;
@@ -68,23 +68,33 @@ const PortfolioWrap = styled.div<PortfolioTjuvgodsProps>`
     width: 95%;
   }
 
+  /* Pilar höger/vänster */
   .works a > span {
     text-decoration: none;
   }
   .works a:hover span {
     color: #ec1839 !important;
   }
-  .work-links a {
-    text-decoration: none;
-    /* color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")}; */
+  /* TextLänkar */
+  #GithubLink {
+    text-decoration: line-through;
   }
+  #SiteLink {
+    text-decoration: none;
+  }
+  /* .work-links a {
+    text-decoration: line-through;
+    text-decoration: none;
+    color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
+  } */
+
   .work-links a:hover {
     color: #ec1839 !important;
     text-decoration: underline;
   }
 `;
 
-const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
+const PortfolioDogeNews: React.FC<PortfolioDogeNewsProps> = ({ bgTheme }) => {
   let myStyles;
 
   if (bgTheme) {
@@ -104,7 +114,7 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
       {bgTheme ? (
         <PortfolioWrap bgTheme>
           <div className="works">
-            <Link to={"/portfoliotesla"}>
+            <Link to={"/portfoliotjuvgods"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-back"
@@ -116,31 +126,33 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
               <h3>Tjuvgods</h3>
               <p>
                 {" "}
-                Your favorite retail reseller store where you "Buy back" your
-                previously owned items. Created with Vue.js, Javascript, Vuex,
-                Axios and Bootstrap.{" "}
+                Your trusted news site from a good boi. SPA created with Vue.js.
+                Only Dev will work, API fetching for dev only. Dependencies:
+                vuex, axios, vue-router and bootstrap.{" "}
               </p>
               <div className="work-links">
                 <a
+                  id="GithubLink"
                   style={myStyles}
-                  href="https://github.com/axxcident/Tjuvgods"
+                  href="https://github.com/axxcident/Doge-News"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Link to Github Repository
                 </a>
                 <a
+                  id="SiteLink"
                   style={myStyles}
-                  href="https://axxcident.github.io/Tjuvgods"
+                  href="https://axxcident.github.io/Doge-News/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Link to App
                 </a>
               </div>
-              <img src="/images/Tjuvgods.jpg" alt="Retail Store" />
+              <img src="/images/DogeNewss.jpg" alt="News Site" />
             </div>
-            <Link to={"/portfoliodogenews"}>
+            <Link to={"/portfolio"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-forward"
@@ -153,7 +165,7 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
       ) : (
         <PortfolioWrap bgTheme>
           <div className="works">
-            <Link to={"/portfoliotesla"}>
+            <Link to={"/portfoliotjuvgods"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-back"
@@ -165,31 +177,33 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
               <h3>Tjuvgods</h3>
               <p>
                 {" "}
-                Your favorite retail reseller store where you "Buy back" your
-                previously owned items. Created with Vue.js, Javascript, Vuex,
-                Axios and Bootstrap.{" "}
+                Your trusted news site from a good boi. SPA created with Vue.js.
+                Only Dev will work, API fetching for dev only. Dependencies:
+                vuex, axios, vue-router and bootstrap.{" "}
               </p>
               <div className="work-links">
                 <a
+                  id="GithubLink"
                   style={myStyles}
-                  href="https://github.com/axxcident/Tjuvgods"
+                  href="https://github.com/axxcident/Doge-News"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Link to Github Repository
                 </a>
                 <a
+                  id="SiteLink"
                   style={myStyles}
-                  href="https://axxcident.github.io/Tjuvgods"
+                  href="https://axxcident.github.io/Doge-News/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Link to App
                 </a>
               </div>
-              <img src="/images/Tjuvgods.jpg" alt="Retail Store" />
+              <img src="/images/DogeNewss.jpg" alt="News Site" />
             </div>
-            <Link to={"/portfoliodogenews"}>
+            <Link to={"/portfolio"}>
               <span
                 style={myStyles}
                 className="material-symbols-outlined arrow-forward"
@@ -204,4 +218,4 @@ const PortfolioTjuvgods: React.FC<PortfolioTjuvgodsProps> = ({ bgTheme }) => {
   );
 };
 
-export default PortfolioTjuvgods;
+export default PortfolioDogeNews;

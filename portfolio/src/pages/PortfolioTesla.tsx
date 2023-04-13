@@ -129,7 +129,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
               <div className="work-links">
                 <a
                   style={myStyles}
-                  href="https://github.com/axxcident/react-todo-app"
+                  href="https://github.com/axxcident/EslaCars"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -137,7 +137,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
                 </a>
                 <a
                   style={myStyles}
-                  href="#https://axxcident.github.io/react-todo-app/"
+                  href="https://github.com/axxcident/EslaCars"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -177,7 +177,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
               <div className="work-links">
                 <a
                   style={myStyles}
-                  href="https://github.com/axxcident/react-todo-app"
+                  href="https://github.com/axxcident/EslaCars"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -185,7 +185,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
                 </a>
                 <a
                   style={myStyles}
-                  href="#https://axxcident.github.io/react-todo-app/"
+                  href="https://github.com/axxcident/EslaCars"
                   target="_blank"
                   rel="noreferrer"
                 >
