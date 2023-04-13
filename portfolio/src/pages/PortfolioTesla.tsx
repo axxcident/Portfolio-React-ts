@@ -80,10 +80,18 @@ const PortfolioWrapper = styled.div<PortfolioTeslaProps>`
     color: #ec1839 !important;
   }
 
-  .work-links a {
-    text-decoration: none;
-    /* color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")}; */
+  /* TextLänkar */
+  #SiteLink {
+    text-decoration: line-through;
   }
+  #GithubLink {
+    text-decoration: none;
+  }
+
+  /* .work-links a {
+    text-decoration: none;
+    color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
+  } */
   .work-links a:hover {
     color: #ec1839 !important;
     text-decoration: underline;
@@ -128,6 +136,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
               </p>
               <div className="work-links">
                 <a
+                  id="GithubLink"
                   style={myStyles}
                   href="https://github.com/axxcident/EslaCars"
                   target="_blank"
@@ -136,6 +145,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
                   Link to Github Repository
                 </a>
                 <a
+                  id="SiteLink"
                   style={myStyles}
                   href="https://github.com/axxcident/EslaCars"
                   target="_blank"
@@ -176,6 +186,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
               </p>
               <div className="work-links">
                 <a
+                  id="GithubLink"
                   style={myStyles}
                   href="https://github.com/axxcident/EslaCars"
                   target="_blank"
@@ -184,6 +195,7 @@ const PortfolioTesla: React.FC<PortfolioTeslaProps> = ({ bgTheme }) => {
                   Link to Github Repository
                 </a>
                 <a
+                  id="SiteLink"
                   style={myStyles}
                   href="https://github.com/axxcident/EslaCars"
                   target="_blank"
