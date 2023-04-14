@@ -1,8 +1,9 @@
 /* 1. General settings
    2. Navbar
    3. Portfolio
-   4. About
-   5. TransitionRoutes
+   4. Services
+   5. About
+   6. TransitionRoutes
 */
 
 body {
@@ -90,6 +91,153 @@ body {
   align-items: center;
   /* flex: 0 0 70%; */
   max-width: 84%;
+}
+
+/* Services */
+.services-page {
+  margin: 0 0 0 calc(220px + 2vmin);
+  padding: 15px;
+  /* display: flex;
+  flex-direction: row; */
+  /* height: 95vh; */
+  height: auto;
+  /* align-items: center; */
+  /* flex: 0 0 70%; */
+  width: 85%;
+}
+
+.service1 {
+  display: flex;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 1240px) {
+  .service1,
+  .service2-icons,
+  .service3-icons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .service2-box,
+  .service3-box {
+    width: 30%;
+  }
+  .service-item1 {
+    width: 90%;
+  }
+  .service2-icon {
+    min-width: 1rem;
+  }
+  .service2-box {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .service3-icon {
+    min-width: 1rem;
+  }
+  .service3-box {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+}
+
+.service-header-sub {
+  margin: 25px;
+}
+
+.service-item1 {
+  border-radius: 10px;
+  border: 1px solid rgba(57, 57, 57, 0.1);
+  margin: 5px;
+}
+
+.service1-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.service1right-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.service1right-icons * {
+  margin-left: 10px;
+}
+
+.service1right-icons h4 {
+  font-size: .8em;
+}
+
+.service1-icons * {
+  margin-left: 10px;
+}
+
+.service1-icon {
+  height: auto;
+  width: 2.5rem;
+}
+
+.service-item1 p {
+  font-size: min(18px, 2.5vw);
+  padding: 15px;
+  text-align: center;
+}
+
+.service2-icons {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 0 15px 0;
+  /* text-align: center; */
+}
+
+.service2-box {
+  padding: 25px 50px 25px 50px;
+  border: 1px solid rgba(57, 57, 57, 0.1);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.service2-icon {
+  /* height: 2em;
+  width: 2em; */
+  height: auto;
+  width: 2.5rem;
+}
+
+.service2-text {
+  text-align: center;
+  padding: 0 50px 0 50px;
+  margin-bottom: 20px;
+}
+.service3-icons {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 0 15px 0;
+  /* text-align: center; */
+}
+
+.service3-box {
+  padding: 25px 50px 25px 50px;
+  border: 1px solid rgba(57, 57, 57, 0.1);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.service3-icon {
+  height: auto;
+  width: 2.5rem;
+}
+
+.service3-text {
+  text-align: center;
+  padding: 0 50px 0 50px;
+  margin-bottom: 20px;
 }
 
 /* About */
