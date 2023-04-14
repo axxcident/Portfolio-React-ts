@@ -1,10 +1,18 @@
 /* 1. General settings
    2. Navbar
-   3. Portfolio
-   4. Services
-   5. About
+   3. About
+   4. Portfolio
+   5. Services
    6. TransitionRoutes
 */
+
+:root {
+  --bg-black-900: #f2f2fc;
+  --bg-black-100: #fdf9ff;
+  --bg-black-50: #e8dfec;
+  --text-black-900: #302e4d;
+  --text-black-700: #504e70;
+}
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -42,12 +50,25 @@ body {
   left: 0;
   /* bg dark 100 */
   background-color: #222222;
+  /* tidigare #393939 */
   /* bg dark 50 */
-  border-right: 2px solid #393939;
+  /* border-right: 2px solid #e8dfec; */
   display: flex;
   justify-content: center;
   flex-direction: column;
   z-index: 1000;
+}
+
+@media only screen and (max-width: 700px) {
+  .navbar {
+    display: none;
+  }
+  .services-page,
+  .portfolio-page,
+  .about-page,
+  .contact-page {
+    margin-left: 40px !important;
+  }
 }
 
 .loggan {
@@ -82,6 +103,91 @@ body {
   text-decoration: none;
 }
 
+
+/* About */
+.about-page {
+  margin: 0 0 0 calc(260px + 2vmin);
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1100px) {
+  .about-page {
+    flex-direction: column;
+    justify-content: center
+  }
+  .mobile-profil-img {
+    display: flex!important;
+  }
+  .profil-img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about-text h1,
+  .about-text h1 span {
+    font-size: 1.6rem!important;
+  }
+}
+
+.namnet {
+  font-style: italic;
+  color: #393939;
+  font-size: 1.1em;
+  /* text-shadow: 1px 1px 1px #393939; */
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  padding-right: 5vw;
+  justify-content: center;
+  align-items: flex-start;
+  max-height: 450px;
+  flex: 0 0 60%;
+  max-width: 60%;
+  /* font-size: min(18px, 2.5vw); */
+}
+
+.about-text h1 {
+  font-size: clamp(16px, 1.9rem, 2.1rem);
+  padding-bottom: calc(20px + 2vmin);
+}
+.about-text p {
+  font-size: clamp(12px, 1rem, 1.4rem);
+}
+
+.about-btn {
+  margin-top: calc(10px + 2vmin);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 35px;
+  color: white;
+  border-radius: 40px;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  background-color: #ec1839;
+  box-shadow: 3px 3px 10px 2px rgba(34, 34, 34, 0.9);
+  /* transition: all 0.3s ease; */
+}
+
+.profil-img {
+  height: 400px;
+  border-radius: 10px;
+}
+.mobile-profil-img {
+  display: none;
+  height: auto;
+  width: 30vw;
+  min-width: 200px;
+  margin-bottom: 34px;
+  border-radius: 10px;
+}
+
 /* Portfolio */
 .portfolio-page {
   margin: 0 0 0 calc(220px + 2vmin);
@@ -97,19 +203,14 @@ body {
 .services-page {
   margin: 0 0 0 calc(220px + 2vmin);
   padding: 15px;
-  /* display: flex;
-  flex-direction: row; */
-  /* height: 95vh; */
   height: auto;
-  /* align-items: center; */
-  /* flex: 0 0 70%; */
   width: 85%;
 }
 
 .service1 {
   display: flex;
   padding: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 85px;
 }
 
 @media only screen and (max-width: 1240px) {
@@ -143,13 +244,38 @@ body {
 }
 
 .service-header-sub {
-  margin: 25px;
+  margin: 50px 25px 20px 25px;
+}
+.service-header-sub h3 {
+  position: relative;
 }
 
+.service-header-sub h3::before {
+  content: '';
+  width: 50px;
+  height: 5px;
+  background-color: rgba(236, 24, 57, 1);
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+.service-header-sub h3::after {
+  content: '';
+  width: 25px;
+  height: 5px;
+  background-color: #ec1839;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+}
+
+/* Tidigare rgba(57, 57, 57, 0.1) */
 .service-item1 {
   border-radius: 10px;
-  border: 1px solid rgba(57, 57, 57, 0.1);
+  border: 1px solid #e8dfec;
   margin: 5px;
+  background-color: var(--bg-black-100);
 }
 
 .service1-icons {
@@ -187,6 +313,11 @@ body {
   text-align: center;
 }
 
+.service2 {
+  padding: 5px;
+  margin-bottom: 85px;
+}
+
 .service2-icons {
   display: flex;
   justify-content: space-around;
@@ -194,12 +325,14 @@ body {
   /* text-align: center; */
 }
 
+/* Tidigare rgba(57, 57, 57, 0.1) */
 .service2-box {
   padding: 25px 50px 25px 50px;
-  border: 1px solid rgba(57, 57, 57, 0.1);
+  border: 1px solid #e8dfec;
   display: flex;
   align-items: center;
   border-radius: 10px;
+  background-color: var(--bg-black-100);
 }
 
 .service2-icon {
@@ -214,6 +347,12 @@ body {
   padding: 0 50px 0 50px;
   margin-bottom: 20px;
 }
+
+.service3 {
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
 .service3-icons {
   display: flex;
   justify-content: space-around;
@@ -221,12 +360,14 @@ body {
   /* text-align: center; */
 }
 
+/* Tidigare rgba(57, 57, 57, 0.1) #e8dfec */
 .service3-box {
   padding: 25px 50px 25px 50px;
-  border: 1px solid rgba(57, 57, 57, 0.1);
+  border: 1px solid #e8dfec;
   display: flex;
   align-items: center;
   border-radius: 10px;
+  background-color: var(--bg-black-100);
 }
 
 .service3-icon {
@@ -238,60 +379,6 @@ body {
   text-align: center;
   padding: 0 50px 0 50px;
   margin-bottom: 20px;
-}
-
-/* About */
-.about-page {
-  margin: 0 0 0 calc(260px + 2vmin);
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  align-items: center;
-}
-
-.namnet {
-  font-style: italic;
-  color: #393939;
-  text-shadow: 1px 1px 1px #393939;
-}
-
-.about-text {
-  display: flex;
-  flex-direction: column;
-  padding-right: 5vw;
-  justify-content: center;
-  align-items: flex-start;
-  max-height: 450px;
-  flex: 0 0 60%;
-  max-width: 60%;
-  font-size: min(18px, 2.5vw);
-}
-
-.about-text h1 {
-  /* padding-bottom: 30px; */
-  padding-bottom: calc(20px + 2vmin);
-  font-size: 2em;
-}
-
-.about-btn {
-  margin-top: calc(20px + 2vmin);
-  font-size: 16px;
-  font-weight: 500;
-  padding: 12px 35px;
-  color: white;
-  border-radius: 40px;
-  border: none;
-  display: inline-block;
-  white-space: nowrap;
-  background-color: #ec1839;
-  /* background: var(--skin-color); */
-  /* transition: all 0.3s ease; */
-}
-
-.profil-img {
-  height: 400px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 2px 1px rgba(34, 34, 34, 0.9);
 }
 
 /* transitionroutes */

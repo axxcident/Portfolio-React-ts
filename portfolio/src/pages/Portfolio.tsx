@@ -19,8 +19,36 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
   .titel {
     width: 50vw;
     position: absolute;
-    top: 55px;
+    top: 35px;
     left: calc(250px + 2vmin);
+  }
+
+  .titel p {
+    margin: 20px 0;
+  }
+
+  .titel h2 {
+    position: relative;
+  }
+
+  .titel h2::before {
+    content: "";
+    width: 50px;
+    height: 5px;
+    background-color: rgba(236, 24, 57, 1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  .titel h2::after {
+    content: "";
+    width: 25px;
+    height: 5px;
+    background-color: rgba(236, 24, 57, 1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
   }
 
   .works-album {
@@ -39,6 +67,8 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
     margin: 10px 20px 20px;
     text-decoration: none;
     border-radius: 15px;
+    background-color: var(--bg-black-100);
+    padding: 10px 5px 0;
   }
 
   .works-album a:hover {

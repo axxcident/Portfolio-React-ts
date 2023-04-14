@@ -53,7 +53,11 @@ const App: React.FC = () => {
         <Route
           path="/"
           element={
-            <About tema={bgTheme} setTema={setBgTheme} namn="Axel Olivecrona" />
+            <About
+              tema={bgTheme}
+              setTema={setBgTheme}
+              namn=" Axel Olivecrona"
+            />
           }
         />
         <Route path="/portfolio" element={<Portfolio bgTheme={bgTheme} />} />
@@ -112,17 +116,19 @@ const App: React.FC = () => {
 export default App;
 
 const Appen = styled.div<{ bgTheme: boolean }>`
-  /* background-color: #151515; */
-  background-color: ${({ bgTheme }) => (bgTheme ? "#151515" : "white")};
-  color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
+  /* background-color: #151515; main-content white #f2f2fc */
+  background-color: ${({ bgTheme }) => (bgTheme ? "#151515" : "#f2f2fc")};
+  color: ${({ bgTheme }) => (bgTheme ? "#f2f2fc" : "#151515")};
 `;
 
 const NavBar = styled.nav<{ bgTheme: boolean }>`
-  background-color: ${({ bgTheme }) => (bgTheme ? "#222222" : "white")};
+  background-color: ${({ bgTheme }) => (bgTheme ? "#222222" : "#fdf9ff")};
+  border-right: 2px solid ${({ bgTheme }) => (bgTheme ? "#393939" : "#e8dfec")};
   /* color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")}; */
   ul li a {
+    /* Bg aside white */
     font-weight: 600;
-    color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
+    color: ${({ bgTheme }) => (bgTheme ? "#f2f2fc" : "#151515")};
   }
   li:hover a {
     color: #ec1839;
