@@ -6,7 +6,6 @@ import styled from "styled-components";
 import TransitionRoutesY from "./TransitionRoutesY";
 import TransitionRoutesX from "./TransitionRoutesX";
 import { Link, Route } from "react-router-dom";
-// import { Routes } from "react-router-dom";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";

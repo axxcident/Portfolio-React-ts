@@ -3,7 +3,8 @@
    3. About
    4. Portfolio
    5. Services
-   6. TransitionRoutes
+   6. Contact
+   7. TransitionRoutes
 */
 
 :root {
@@ -381,24 +382,13 @@ body {
   margin-bottom: 20px;
 }
 
-/* transitionroutes */
-/* #root > div > div:nth-child(2) {
-  position: absolute;
-  top: 90px;
-  left: 0px;
-  width: 98%;
-  height: 92%;
-  z-index: 2;
-}
-#root > div > div:nth-child(3) {
-  position: absolute;
-  top: 45px;
-  left: 0px;
-  width: 98%;
-  height: 92%;
-  z-index: 1;
-} */
+/* Contact */
 
+.contact-page {
+  margin: 0 0 0 calc(260px + 2vmin);
+}
+
+/* transitionroutes */
 #root > div > div:nth-child(2) {
   display: flex;
   width: 98%;

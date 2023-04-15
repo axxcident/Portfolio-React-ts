@@ -18,3 +18,21 @@ I App.tsx:
           element={<PortfolioTodo bgTheme={bgTheme} />}
         />
       </Routes> */}
+
+Gammal css till Routes:
+/* #root > div > div:nth-child(2) {
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  width: 98%;
+  height: 92%;
+  z-index: 2;
+}
+#root > div > div:nth-child(3) {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  width: 98%;
+  height: 92%;
+  z-index: 1;
+} */

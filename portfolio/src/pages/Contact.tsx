@@ -1,18 +1,14 @@
 import React from "react";
+import FormikSection from "../components/FormikSection";
 
-const Contact = () => {
-  const styles = {
-    fontSize: "2rem",
-    padding: "1rem",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "90vh",
-  };
+const Contact: React.FC = () => {
   return (
-    <div style={styles} className="portfolio-page">
-      Contact
-    </div>
+    <>
+      <div className="contact-page">
+        <h2>Contact</h2>
+        <FormikSection />
+      </div>
+    </>
   );
 };
 
