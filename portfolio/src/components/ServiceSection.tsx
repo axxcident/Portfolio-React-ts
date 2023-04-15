@@ -10,7 +10,11 @@ import {
   SiPhotopea,
 } from "react-icons/si";
 
-const ServiceSection: React.FC = () => {
+interface ServiceProps {
+  bgTheme: boolean;
+}
+
+const ServiceSection: React.FC<ServiceProps> = ({ bgTheme }) => {
   return (
     <>
       <div className="services-page">

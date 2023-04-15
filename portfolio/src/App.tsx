@@ -49,7 +49,7 @@ const App: React.FC = () => {
           </li>
         </ul>
       </NavBar>
-      {/* Routes | <TransitionRoutesY> */}
+      {/* Routes | <TransitionRoutes Y X> */}
       <TransitionRoutesY>
         <Route
           path="/"
@@ -62,28 +62,9 @@ const App: React.FC = () => {
           }
         />
         <Route path="/portfolio" element={<Portfolio bgTheme={bgTheme} />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<Services bgTheme={bgTheme} />} />
         <Route path="/contact" element={<Contact />} />
       </TransitionRoutesY>
-      {/* <Routes>
-        <Route
-          path="/"
-          element={
-            <About tema={bgTheme} setTema={setBgTheme} namn="Axel Olivecrona" />
-          }
-        />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route
-          path="/portfoliotesla"
-          element={<PortfolioTesla bgTheme={bgTheme} />}
-        />
-        <Route
-          path="/portfoliotodo"
-          element={<PortfolioTodo bgTheme={bgTheme} />}
-        />
-      </Routes> */}
       <TransitionRoutesX>
         <Route
           path="/portfoliotesla"

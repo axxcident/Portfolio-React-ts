@@ -1,0 +1,20 @@
+I App.tsx:
+      {/* <Routes>
+        <Route
+          path="/"
+          element={
+            <About tema={bgTheme} setTema={setBgTheme} namn="Axel Olivecrona" />
+          }
+        />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/portfoliotesla"
+          element={<PortfolioTesla bgTheme={bgTheme} />}
+        />
+        <Route
+          path="/portfoliotodo"
+          element={<PortfolioTodo bgTheme={bgTheme} />}
+        />
+      </Routes> */}
