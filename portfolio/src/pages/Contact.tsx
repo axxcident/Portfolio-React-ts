@@ -1,12 +1,16 @@
 import React from "react";
 import FormikSection from "../components/FormikSection";
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  bgTheme: boolean;
+}
+
+const Contact: React.FC<ContactProps> = ({ bgTheme }) => {
   return (
     <>
       <div className="contact-page">
-        <h2>Contact</h2>
-        <FormikSection />
+        <h2>Contact Me</h2>
+        <FormikSection bgTheme={bgTheme} />
       </div>
     </>
   );

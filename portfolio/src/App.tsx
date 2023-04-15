@@ -62,7 +62,7 @@ const App: React.FC = () => {
         />
         <Route path="/portfolio" element={<Portfolio bgTheme={bgTheme} />} />
         <Route path="/services" element={<Services bgTheme={bgTheme} />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact bgTheme={bgTheme} />} />
       </TransitionRoutesY>
       <TransitionRoutesX>
         <Route

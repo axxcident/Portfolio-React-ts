@@ -383,9 +383,14 @@ body {
 }
 
 /* Contact */
-
 .contact-page {
   margin: 0 0 0 calc(260px + 2vmin);
+  width: 75%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* transitionroutes */
