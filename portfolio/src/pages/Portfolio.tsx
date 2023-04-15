@@ -6,7 +6,7 @@ import { PortFolioProps } from "../models/PortfolioProps";
 interface PortfolioProps {
   bgTheme: boolean;
 }
-// div<{ bgTheme: boolean }>`
+
 const Wrap = styled.div<{ bgTheme: boolean }>`
   /* display: flex; */
   /* flex-direction: column; */
@@ -14,8 +14,6 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
   width: 83vw;
   max-height: 90vh;
   z-index: 900;
-
-  /* Skapa Annorlunda css för Wrap när viewport är mindre än 1430px*/
 
   .titel {
     width: 50vw;
