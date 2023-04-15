@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { PortFolioProps } from "../models/PortfolioProps";
 
 interface PortfolioProps {
   bgTheme: boolean;
 }
-
+// div<{ bgTheme: boolean }>`
 const Wrap = styled.div<{ bgTheme: boolean }>`
   /* display: flex; */
   /* flex-direction: column; */
@@ -67,14 +68,23 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
     margin: 10px 20px 20px;
     text-decoration: none;
     border-radius: 15px;
-    background-color: var(--bg-black-100);
     padding: 10px 5px 0;
+    /* background-color: #222222; */
+    background-color: ${({ bgTheme }) => (bgTheme ? "#222222" : "#ffffff")};
   }
+  /* var(--text-black-900)*/
 
   .works-album a:hover {
-    box-shadow: 0px 0px 20px 0px rgba(34, 34, 34, 0.9);
+    box-shadow: ${({ bgTheme }) =>
+      bgTheme
+        ? "0px 0px 20px 0px rgba(255, 255, 255, 1)"
+        : "0px 0px 20px 0px rgba(34, 34, 34, 0.9)"};
     transform: translate(-2px, -2px);
   }
+  /* .works-album a:hover {
+    box-shadow: 0px 0px 20px 0px rgba(34, 34, 34, 0.9);
+    transform: translate(-2px, -2px);
+  } */
 
   /* .works-album a:hover p {
     color: #ec1839 !important;
@@ -96,13 +106,11 @@ const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
   let myStyles;
 
   if (bgTheme) {
-    console.log("bgTheme true");
     myStyles = {
       color: "white",
     };
   }
   if (!bgTheme) {
-    console.log("bgTheme false");
     myStyles = {
       color: "#151515",
     };
@@ -111,7 +119,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
     <>
       {bgTheme ? (
         <section className="portfolio-page">
-          <Wrap bgTheme>
+          <Wrap bgTheme={true}>
             <div className="titel">
               <h2>Portfolio</h2>
               <p>Click to learn more about each project</p>
@@ -146,7 +154,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
         </section>
       ) : (
         <section className="portfolio-page">
-          <Wrap bgTheme>
+          <Wrap bgTheme={false}>
             <div className="titel">
               <h2>Portfolio</h2>
               <p>Click to learn more about each project</p>

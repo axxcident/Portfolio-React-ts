@@ -17,9 +17,10 @@ import PortfolioTjuvgods from "./pages/PortfolioTjuvgods";
 import PortfolioDogeNews from "./pages/PortfolioDogeNews";
 import PortfolioDogeFB from "./pages/PortfolioDogeFB";
 import PortfolioWeather from "./pages/PortfolioWeather";
+// import { PortFolioProps } from "./models/PortfolioProps";
 
 const App: React.FC = () => {
-  const [bgTheme, setBgTheme] = useState(false);
+  const [bgTheme, setBgTheme] = useState<boolean>(false);
 
   return (
     // App
