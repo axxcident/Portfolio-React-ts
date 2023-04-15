@@ -36,3 +36,12 @@ Gammal css till Routes:
   height: 92%;
   z-index: 1;
 } */
+
+Gammal email funktion
+    // Att göra: Email sending function here using the form values
+    // Gammal function. konsol och alertar all info bara.
+    // setTimeout(() => {
+    //   console.log(values);
+    //   alert(JSON.stringify(values, null, 2));
+    //   setSubmitting(false);
+    // }, 400);
