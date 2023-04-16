@@ -4,7 +4,7 @@ import "./App.css";
 import styled from "styled-components";
 // Icons
 import { BsMoonStarsFill } from "react-icons/bs";
-import { BsSunFill, BsSun } from "react-icons/bs";
+import { BsSunFill, BsSun, BsPeopleFill } from "react-icons/bs";
 // Transition between pages & pages
 import TransitionRoutesY from "./TransitionRoutesY";
 import TransitionRoutesX from "./TransitionRoutesX";
@@ -19,6 +19,7 @@ import PortfolioTjuvgods from "./pages/PortfolioTjuvgods";
 import PortfolioDogeNews from "./pages/PortfolioDogeNews";
 import PortfolioDogeFB from "./pages/PortfolioDogeFB";
 import PortfolioWeather from "./pages/PortfolioWeather";
+import Referrals from "./pages/Referrals";
 // import { PortFolioProps } from "./models/PortfolioProps";
 
 const App: React.FC = () => {
@@ -41,6 +42,12 @@ const App: React.FC = () => {
           <li>
             <span className="material-symbols-outlined">build</span>
             <Link to={"/services"}>Services</Link>
+          </li>
+          <li>
+            <span className="material-symbols-outlined">
+              supervisor_account
+            </span>
+            <Link to={"/referrals"}>Referrals</Link>
           </li>
           <li>
             <span className="material-symbols-outlined">forum</span>
@@ -77,6 +84,12 @@ const App: React.FC = () => {
             <Link to={"/services"}>Services</Link>
           </li>
           <li>
+            <span className="material-symbols-outlined">
+              supervisor_account
+            </span>
+            <Link to={"/referrals"}>Referrals</Link>
+          </li>
+          <li>
             <span className="material-symbols-outlined">forum</span>
             <Link to={"/contact"}>Contact</Link>
           </li>
@@ -106,6 +119,7 @@ const App: React.FC = () => {
           }
         />
         <Route path="/portfolio" element={<Portfolio bgTheme={bgTheme} />} />
+        <Route path="/referrals" element={<Referrals bgTheme={bgTheme} />} />
         <Route path="/services" element={<Services bgTheme={bgTheme} />} />
         <Route path="/contact" element={<Contact bgTheme={bgTheme} />} />
       </TransitionRoutesY>

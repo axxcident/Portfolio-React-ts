@@ -4,7 +4,8 @@
    4. Portfolio
    5. Services
    6. Contact
-   7. TransitionRoutes
+   7. Referrals
+   8. TransitionRoutes
 */
 
 :root {
@@ -436,6 +437,17 @@ body {
   text-align: center;
   padding: 0 50px 0 50px;
   margin-bottom: 20px;
+}
+
+/* Referrals */
+.referrals-page {
+  margin: 0 0 0 calc(260px + 2vmin);
+  width: 80%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Contact */

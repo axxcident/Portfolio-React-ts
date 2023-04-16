@@ -14,7 +14,7 @@ import styled from "styled-components";
 interface ServiceProps {
   bgTheme: boolean;
 }
-// <ServiceProps>
+
 const ServiceWrap = styled.div<{ bgTheme: boolean }>`
   .service-item1 {
     background-color: ${({ bgTheme }) => (bgTheme ? "#222222" : "#fdf9ff")};
