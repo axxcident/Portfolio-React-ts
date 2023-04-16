@@ -31,6 +31,14 @@ const ContactWrap = styled.div<{ bgTheme: boolean }>`
   align-items: center;
   color: ${({ bgTheme }) => (bgTheme ? "white" : "#222222")};
 
+  @media only screen and (max-width: 700px) {
+    width: 85%;
+
+    form {
+      width: 80%;
+    }
+  }
+
   h4 {
     margin-bottom: 10px;
   }
