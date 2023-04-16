@@ -27,7 +27,38 @@ const App: React.FC = () => {
   return (
     // App
     <Appen bgTheme={bgTheme} className="App">
-      {/* Navbar */}
+      {/* Navbars */}
+      <MobileNav bgTheme={bgTheme} className="mobile-navbar">
+        <ul className="mobile-länkar">
+          <li>
+            <span className="material-symbols-outlined">person</span>
+            <Link to={"/"}>About</Link>
+          </li>
+          <li>
+            <span className="material-symbols-outlined">cases</span>
+            <Link to={"/portfolio"}>Portfolio</Link>
+          </li>
+          <li>
+            <span className="material-symbols-outlined">build</span>
+            <Link to={"/services"}>Services</Link>
+          </li>
+          <li>
+            <span className="material-symbols-outlined">forum</span>
+            <Link to={"/contact"}>Contact</Link>
+          </li>
+        </ul>
+        <div className="theme">
+          <button
+            className="nav-btn"
+            onClick={() => {
+              setBgTheme(!bgTheme);
+              console.log("klickad", bgTheme);
+            }}
+          >
+            {bgTheme ? <BsSunFill /> : <BsMoonStarsFill />}
+          </button>
+        </div>
+      </MobileNav>
       <NavBar bgTheme={bgTheme} className="navbar">
         <div className="loggan">
           <h2>A&O</h2>
@@ -119,6 +150,32 @@ const Appen = styled.div<{ bgTheme: boolean }>`
 const NavBar = styled.nav<{ bgTheme: boolean }>`
   background-color: ${({ bgTheme }) => (bgTheme ? "#222222" : "#fdf9ff")};
   border-right: 2px solid ${({ bgTheme }) => (bgTheme ? "#393939" : "#e8dfec")};
+  /* color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")}; */
+  ul li a {
+    /* Bg aside white */
+    font-weight: 600;
+    color: ${({ bgTheme }) => (bgTheme ? "#f2f2fc" : "#151515")};
+  }
+  li:hover a {
+    color: #ec1839;
+  }
+  li:hover span {
+    color: #ec1839;
+  }
+  .nav-btn {
+    background-color: ${({ bgTheme }) => (bgTheme ? "#ec1839" : "#fdf9ff")};
+    border: 2px solid ${({ bgTheme }) => (bgTheme ? "#393939" : "#e8dfec")};
+    color: ${({ bgTheme }) => (bgTheme ? "#fdf9ff" : "#393939")};
+    box-shadow: ${({ bgTheme }) =>
+      bgTheme
+        ? "3px 3px 10px 2px rgba(236, 24, 57, 0.902)"
+        : "3px 3px 10px 2px rgba(34, 34, 34, 0.902)"};
+  }
+`;
+
+const MobileNav = styled.nav<{ bgTheme: boolean }>`
+  background-color: ${({ bgTheme }) => (bgTheme ? "#222222" : "#fdf9ff")};
+  border-bottom: 2px solid ${({ bgTheme }) => (bgTheme ? "#393939" : "#e8dfec")};
   /* color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")}; */
   ul li a {
     /* Bg aside white */

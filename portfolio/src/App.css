@@ -60,9 +60,42 @@ body {
   z-index: 1000;
 }
 
+.mobile-navbar {
+  display: none;
+}
+
+.mobile-länkar {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.mobile-länkar li a {
+  text-decoration: none;
+  font-size: clamp(12px, 1rem, 1.4rem);
+  padding: 0px 7px 0px 0px;
+}
+
+/* .mobile-länkar li * {
+  padding: 2px;
+} */
+
 @media only screen and (max-width: 700px) {
   .navbar {
     display: none;
+  }
+  .mobile-navbar {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+    align-items: flex-end;
+  }
+  .theme {
+    margin-bottom: 0px!important;
+  }
+  .nav-btn {
+    padding: 7px 5px 5px 5px!important;
   }
   .services-page,
   .portfolio-page,

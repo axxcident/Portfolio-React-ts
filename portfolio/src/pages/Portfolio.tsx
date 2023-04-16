@@ -22,6 +22,17 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
     left: calc(250px + 2vmin);
   }
 
+  @media only screen and (max-width: 700px) {
+    margin-top: 0;
+
+    .titel {
+      left: calc(25px + 2vmin);
+    }
+    .works-album {
+      margin: 0px 15px 15px 15px !important;
+    }
+  }
+
   .titel p {
     margin: 20px 0;
   }
