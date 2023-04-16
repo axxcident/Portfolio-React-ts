@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
@@ -10,18 +10,45 @@ interface FocusRefProps {
   bgTheme: boolean;
 }
 
+interface Quote {
+  citat: string;
+}
+
 const FocusWrap = styled.div<{ bgTheme: boolean }>`
   margin-left: 250px;
   width: 75%;
   height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
+  .focus-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .focus-page * {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
   .focus-page img {
+    height: auto;
+    width: 250px;
     border-radius: 10px;
   }
+
+  .focus-page p {
+    font-size: 1.3rem;
+    width: 50vw;
+  }
+
+  #citatet {
+    font-style: italic;
+  }
+
   .question {
     width: 50vw;
     display: flex;
@@ -37,6 +64,26 @@ const FocusWrap = styled.div<{ bgTheme: boolean }>`
 `;
 
 const FocusRef: React.FC<FocusRefProps> = ({ bgTheme }) => {
+  const [citat, setCitat] = useState<Quote[]>([]);
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const fetchdata = async () => {
+      try {
+        const response = await fetch(
+          "https://api.mockaroo.com/api/6bab4200?count=2&key=d04bfc30"
+        );
+        const jsonData = await response.json();
+        setCitat(jsonData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchdata();
+  }, []);
+
+  const quote = citat.length > 0 ? citat[index] : null;
+  // const quote = citat[index];
+
   const { id } = useParams<{ id: string }>(); // extract id parameter from URL path
 
   // const userData = useSelector((state: RootState) => 1
@@ -46,7 +93,7 @@ const FocusRef: React.FC<FocusRefProps> = ({ bgTheme }) => {
   //   state.userData.data.find((user: UserData) => user.id === Number(id))
   // );
   const userData = useSelector((state: RootState) => {
-    console.log(state); // log the state of the store
+    // console.log(state); // log the state of the store
     return state.userData.data.find(
       (user: UserData) => user.location.street.number * 12 === Number(id)
     );
@@ -66,6 +113,10 @@ const FocusRef: React.FC<FocusRefProps> = ({ bgTheme }) => {
           {userData && (
             <div className="focus-page">
               <img src={userData.picture.large} alt="refperson" />
+              <p>
+                "I would probably frame our latest project like so: <br />{" "}
+                <span id="citatet">{quote?.citat}</span>"
+              </p>
               <p>
                 namn: {userData.name.title} {userData.name.first}{" "}
                 {userData.name.last}
@@ -87,10 +138,13 @@ const FocusRef: React.FC<FocusRefProps> = ({ bgTheme }) => {
             <div className="focus-page">
               <img src={userData.picture.large} alt="refperson" />
               <p>
-                namn: {userData.name.title} {userData.name.first}{" "}
-                {userData.name.last}
+                "I would probably frame our latest project like so: <br />{" "}
+                <span id="citatet">{quote?.citat}</span>"
               </p>
-              <p>Email: {userData.email}</p>
+              <p>
+                {userData.name.title} {userData.name.first} {userData.name.last}
+              </p>
+              <p>email: {userData.email}</p>
             </div>
           )}
         </FocusWrap>
