@@ -60,6 +60,7 @@ const AboutSection: React.FC<AboutProps> = ({
             </p>
             <button
               className="about-btn"
+              style={myShadow}
               onClick={() => {
                 setTema(!tema);
                 console.log("klickad", tema);

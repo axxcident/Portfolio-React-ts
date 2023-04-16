@@ -52,7 +52,7 @@ const App: React.FC = () => {
         </ul>
         <div className="theme">
           <button
-            className="about-btn"
+            className="nav-btn"
             onClick={() => {
               setBgTheme(!bgTheme);
               console.log("klickad", bgTheme);
@@ -130,5 +130,14 @@ const NavBar = styled.nav<{ bgTheme: boolean }>`
   }
   li:hover span {
     color: #ec1839;
+  }
+  .nav-btn {
+    background-color: ${({ bgTheme }) => (bgTheme ? "#ec1839" : "#fdf9ff")};
+    border: 2px solid ${({ bgTheme }) => (bgTheme ? "#393939" : "#e8dfec")};
+    color: ${({ bgTheme }) => (bgTheme ? "#fdf9ff" : "#393939")};
+    box-shadow: ${({ bgTheme }) =>
+      bgTheme
+        ? "3px 3px 10px 2px rgba(236, 24, 57, 0.902)"
+        : "3px 3px 10px 2px rgba(34, 34, 34, 0.902)"};
   }
 `;

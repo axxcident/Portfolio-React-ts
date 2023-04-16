@@ -110,6 +110,18 @@ body {
   margin-bottom: 40px;
 }
 
+.nav-btn {
+  margin-top: calc(10px + 2vmin);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 35px;
+  border-radius: 40px;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  /* transition: all 0.3s ease; MER KOD BEHÖVS TROR JAG FÖR ATT KNAPP SKA FLYTTA PÅ SIG */
+}
+
 
 /* About */
 .about-page {
