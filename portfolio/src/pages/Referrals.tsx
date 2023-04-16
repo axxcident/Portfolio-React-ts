@@ -27,7 +27,8 @@ interface UserData {
 
 const ReferralsWrap = styled.div<{ bgTheme: boolean }>`
   .refperson-container {
-    background-color: var(--bg-black-100);
+    background-color: ${({ bgTheme }) => (bgTheme ? "#222222" : "white")};
+    /* background-color: var(--bg-black-100); */
     border-radius: 10px;
     width: 95%;
     height: 70%;
@@ -57,21 +58,41 @@ const Referrals: React.FC<ReferralsProps> = ({ bgTheme }) => {
 
   return (
     <>
-      <ReferralsWrap bgTheme={true} className="referrals-page">
-        <h2>Referrals</h2>
-        <div className="refperson-container">
-          {data.map((person) => (
-            <RefPerson
-              key={person.id.value}
-              name={person.name}
-              gender={person.gender}
-              email={person.email}
-              id={person.id}
-              picture={person.picture}
-            />
-          ))}
-        </div>
-      </ReferralsWrap>
+      {bgTheme ? (
+        <ReferralsWrap bgTheme={true} className="referrals-page">
+          <h2>Referrals</h2>
+          <div className="refperson-container">
+            {data.map((person) => (
+              <RefPerson
+                key={person.id.value}
+                name={person.name}
+                gender={person.gender}
+                email={person.email}
+                id={person.id}
+                picture={person.picture}
+                bgTheme={bgTheme}
+              />
+            ))}
+          </div>
+        </ReferralsWrap>
+      ) : (
+        <ReferralsWrap bgTheme={false} className="referrals-page">
+          <h2>Referrals</h2>
+          <div className="refperson-container">
+            {data.map((person) => (
+              <RefPerson
+                key={person.id.value}
+                name={person.name}
+                gender={person.gender}
+                email={person.email}
+                id={person.id}
+                picture={person.picture}
+                bgTheme={bgTheme}
+              />
+            ))}
+          </div>
+        </ReferralsWrap>
+      )}
     </>
   );
 };

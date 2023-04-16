@@ -18,16 +18,18 @@ interface PersonProps {
     medium: string;
     thumbnail: string;
   };
+  bgTheme: boolean;
 }
 
 const RefWrap = styled.div<{ bgTheme: boolean }>`
   .refperson {
     padding: 15px;
     display: flex;
-    border: 2px solid var(--bg-black-50);
+    /* border: 2px solid var(--bg-black-50); */
     border-radius: 30px;
     margin: 30px;
-    background-color: ${({ bgTheme }) => (bgTheme ? "#393939" : "white")};
+    background-color: ${({ bgTheme }) => (bgTheme ? "black" : "white")};
+    border: 2px solid ${({ bgTheme }) => (bgTheme ? "#393939" : "#e8dfec")};
     cursor: pointer;
   }
 
@@ -50,20 +52,35 @@ const RefPerson: React.FC<PersonProps> = ({
   email,
   id,
   picture,
+  bgTheme,
 }) => {
   return (
     <>
-      <RefWrap bgTheme={false}>
-        <div className="refperson">
-          {/* <p>Gender: {gender} </p> */}
-          <img src={picture.thumbnail} alt="refperson" />
-          <p>
-            Name: {name.title} {name.first} {name.last}{" "}
-          </p>
-          {/* <p>Email: {email} </p> */}
-          {/* <p>ID: {id.value} </p> */}
-        </div>
-      </RefWrap>
+      {bgTheme ? (
+        <RefWrap bgTheme={true}>
+          <div className="refperson">
+            {/* <p>Gender: {gender} </p> */}
+            <img src={picture.thumbnail} alt="refperson" />
+            <p>
+              Name: {name.title} {name.first} {name.last}{" "}
+            </p>
+            {/* <p>Email: {email} </p> */}
+            {/* <p>ID: {id.value} </p> */}
+          </div>
+        </RefWrap>
+      ) : (
+        <RefWrap bgTheme={false}>
+          <div className="refperson">
+            {/* <p>Gender: {gender} </p> */}
+            <img src={picture.thumbnail} alt="refperson" />
+            <p>
+              Name: {name.title} {name.first} {name.last}{" "}
+            </p>
+            {/* <p>Email: {email} </p> */}
+            {/* <p>ID: {id.value} </p> */}
+          </div>
+        </RefWrap>
+      )}
     </>
   );
 };
