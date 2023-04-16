@@ -13,6 +13,20 @@ interface UserData {
     first: string;
     last: string;
   };
+  location: {
+    street: {
+      number: number;
+      name: string;
+    };
+    city: string;
+    state: string;
+    country: string;
+    postcode: number;
+    coordinates: {
+      latitude: string;
+      longitude: string;
+    };
+  };
   email: string;
   id: {
     name: string;
@@ -28,7 +42,6 @@ interface UserData {
 const ReferralsWrap = styled.div<{ bgTheme: boolean }>`
   .refperson-container {
     background-color: ${({ bgTheme }) => (bgTheme ? "#222222" : "white")};
-    /* background-color: var(--bg-black-100); */
     border-radius: 10px;
     width: 95%;
     height: 70%;
@@ -45,7 +58,7 @@ const Referrals: React.FC<ReferralsProps> = ({ bgTheme }) => {
     const fetchdata = async () => {
       try {
         const response = await fetch(
-          "https://randomuser.me/api/?inc=id,gender,name,email,picture&results=6"
+          "https://randomuser.me/api/?inc=id,gender,location,name,email,picture&results=6"
         );
         const jsonData = await response.json();
         setData(jsonData.results);
@@ -64,11 +77,11 @@ const Referrals: React.FC<ReferralsProps> = ({ bgTheme }) => {
           <div className="refperson-container">
             {data.map((person) => (
               <RefPerson
-                key={person.id.value}
+                key={person.location.street.number * 12}
                 name={person.name}
                 gender={person.gender}
                 email={person.email}
-                id={person.id}
+                id={person.location.street.number * 12}
                 picture={person.picture}
                 bgTheme={bgTheme}
               />
@@ -81,11 +94,11 @@ const Referrals: React.FC<ReferralsProps> = ({ bgTheme }) => {
           <div className="refperson-container">
             {data.map((person) => (
               <RefPerson
-                key={person.id.value}
+                key={person.location.street.number * 12}
                 name={person.name}
                 gender={person.gender}
                 email={person.email}
-                id={person.id}
+                id={person.location.street.number * 12}
                 picture={person.picture}
                 bgTheme={bgTheme}
               />

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 interface PersonProps {
   gender: string;
@@ -9,10 +10,7 @@ interface PersonProps {
     last: string;
   };
   email: string;
-  id: {
-    name: string;
-    value: string;
-  };
+  id: number;
   picture: {
     large: string;
     medium: string;
@@ -65,7 +63,7 @@ const RefPerson: React.FC<PersonProps> = ({
               Name: {name.title} {name.first} {name.last}{" "}
             </p>
             {/* <p>Email: {email} </p> */}
-            {/* <p>ID: {id.value} </p> */}
+            <p>ID: {id} </p>
           </div>
         </RefWrap>
       ) : (
@@ -77,7 +75,7 @@ const RefPerson: React.FC<PersonProps> = ({
               Name: {name.title} {name.first} {name.last}{" "}
             </p>
             {/* <p>Email: {email} </p> */}
-            {/* <p>ID: {id.value} </p> */}
+            <p>ID: {id} </p>
           </div>
         </RefWrap>
       )}
