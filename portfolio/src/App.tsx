@@ -20,6 +20,7 @@ import PortfolioDogeNews from "./pages/PortfolioDogeNews";
 import PortfolioDogeFB from "./pages/PortfolioDogeFB";
 import PortfolioWeather from "./pages/PortfolioWeather";
 import Referrals from "./pages/Referrals";
+import FocusRef from "./pages/FocusRef";
 // import { PortFolioProps } from "./models/PortfolioProps";
 
 const App: React.FC = () => {
@@ -120,6 +121,7 @@ const App: React.FC = () => {
         />
         <Route path="/portfolio" element={<Portfolio bgTheme={bgTheme} />} />
         <Route path="/referrals" element={<Referrals bgTheme={bgTheme} />} />
+        <Route path="/focusref/:id" element={<FocusRef bgTheme={bgTheme} />} />
         <Route path="/services" element={<Services bgTheme={bgTheme} />} />
         <Route path="/contact" element={<Contact bgTheme={bgTheme} />} />
       </TransitionRoutesY>

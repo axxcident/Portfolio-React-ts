@@ -25,7 +25,17 @@ interface UserData {
   };
 }
 
-const ReferralsWrap = styled.div<{ bgTheme: boolean }>``;
+const ReferralsWrap = styled.div<{ bgTheme: boolean }>`
+  .refperson-container {
+    background-color: var(--bg-black-100);
+    border-radius: 10px;
+    width: 95%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+`;
 
 const Referrals: React.FC<ReferralsProps> = ({ bgTheme }) => {
   const [data, setData] = useState<UserData[]>([]);
@@ -34,7 +44,7 @@ const Referrals: React.FC<ReferralsProps> = ({ bgTheme }) => {
     const fetchdata = async () => {
       try {
         const response = await fetch(
-          "https://randomuser.me/api/?inc=id,gender,name,email,picture&results=3"
+          "https://randomuser.me/api/?inc=id,gender,name,email,picture&results=6"
         );
         const jsonData = await response.json();
         setData(jsonData.results);
@@ -49,16 +59,18 @@ const Referrals: React.FC<ReferralsProps> = ({ bgTheme }) => {
     <>
       <ReferralsWrap bgTheme={true} className="referrals-page">
         <h2>Referrals</h2>
-        {data.map((person) => (
-          <RefPerson
-            key={person.id.value}
-            name={person.name}
-            gender={person.gender}
-            email={person.email}
-            id={person.id}
-            picture={person.picture}
-          />
-        ))}
+        <div className="refperson-container">
+          {data.map((person) => (
+            <RefPerson
+              key={person.id.value}
+              name={person.name}
+              gender={person.gender}
+              email={person.email}
+              id={person.id}
+              picture={person.picture}
+            />
+          ))}
+        </div>
       </ReferralsWrap>
     </>
   );
