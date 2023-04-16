@@ -6,10 +6,6 @@ interface PortfolioTeslaProps {
   bgTheme: boolean;
 }
 
-// <{ tema: boolean }>
-// <PortfolioTodoProps>
-// :React.FC<PortfolioTeslaProps>
-// <{ bgTheme: PortfolioTeslaProps }>
 const PortfolioWrapper = styled.div<PortfolioTeslaProps>`
   width: 75%;
   height: 90vh;
@@ -17,7 +13,36 @@ const PortfolioWrapper = styled.div<PortfolioTeslaProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 200;
+  position: relative;
+
+  @media only screen and (max-width: 1150px) {
+    width: 70% !important;
+    margin-left: 280px !important;
+
+    .works {
+      flex-direction: column !important;
+    }
+
+    .container {
+      width: 80% !important;
+    }
+
+    .works .container h3 {
+      margin-top: -10px !important;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 65% !important;
+    .works > * {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    margin-left: 20px !important;
+    width: 95% !important;
+  }
 
   .arrow-back {
     width: 80px;
@@ -88,10 +113,6 @@ const PortfolioWrapper = styled.div<PortfolioTeslaProps>`
     text-decoration: none;
   }
 
-  /* .work-links a {
-    text-decoration: none;
-    color: ${({ bgTheme }) => (bgTheme ? "white" : "#151515")};
-  } */
   .work-links a:hover {
     color: #ec1839 !important;
     text-decoration: underline;

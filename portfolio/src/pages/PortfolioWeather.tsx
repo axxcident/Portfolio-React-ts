@@ -14,7 +14,35 @@ const PortfolioWrap = styled.div<PortfolioWeatherProps>`
   flex-direction: column;
   justify-content: center;
   position: relative;
-  z-index: 900;
+
+  @media only screen and (max-width: 1150px) {
+    width: 70% !important;
+    margin-left: 280px !important;
+
+    .works {
+      flex-direction: column !important;
+    }
+
+    .container {
+      width: 80% !important;
+    }
+
+    .works .container h3 {
+      margin-top: -10px !important;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 65% !important;
+    .works > * {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    margin-left: 20px !important;
+    width: 95% !important;
+  }
 
   .arrow-back {
     width: 80px;
