@@ -13,7 +13,6 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
   margin-top: 2rem;
   width: 83vw;
   max-height: 90vh;
-  z-index: 900;
 
   .titel {
     width: 50vw;
@@ -23,13 +22,24 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
   }
 
   @media only screen and (max-width: 700px) {
+    width: 80vw;
     margin-top: 0;
+
+    .portfolio-page {
+      max-width: 100%;
+    }
 
     .titel {
       left: calc(25px + 2vmin);
     }
     .works-album {
-      margin: 0px 15px 15px 15px !important;
+      margin: 100px 0px 0px 0px !important;
+    }
+
+    .works-album a {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      margin: 0px 0px 20px !important;
     }
   }
 
