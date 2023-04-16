@@ -72,7 +72,7 @@ const RefPerson: React.FC<PersonProps> = ({
                 Name: {name.title} {name.first} {name.last}{" "}
               </p>
               {/* <p>Email: {email} </p> */}
-              <p>ID: {id} </p>
+              {/* <p>ID: {id} </p> */}
             </div>
           </Link>
         </RefWrap>
@@ -86,7 +86,7 @@ const RefPerson: React.FC<PersonProps> = ({
                 Name: {name.title} {name.first} {name.last}{" "}
               </p>
               {/* <p>Email: {email} </p> */}
-              <p>ID: {id} </p>
+              {/* <p>ID: {id} </p> */}
             </div>
           </Link>
         </RefWrap>
