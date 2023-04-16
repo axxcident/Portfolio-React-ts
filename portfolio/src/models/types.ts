@@ -1,10 +1,10 @@
 export interface UserData {
-  gender: string;
+  gender: string,
   name: {
     title: string;
     first: string;
     last: string;
-  };
+  },
   location: {
     street: {
       number: number;
@@ -18,12 +18,13 @@ export interface UserData {
       latitude: string;
       longitude: string;
     };
-  };
-  email: string;
-  id: {
-    name: string;
-    value: string;
-  };
+  },
+  email: string,
+  id: number;
+  // id: {
+  //   name: string;
+  //   value: string;
+  // };
   picture: {
     large: string;
     medium: string;

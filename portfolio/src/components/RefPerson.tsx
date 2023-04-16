@@ -20,6 +20,11 @@ interface PersonProps {
 }
 
 const RefWrap = styled.div<{ bgTheme: boolean }>`
+  a {
+    text-decoration: none;
+    color: ${({ bgTheme }) => (bgTheme ? "#f2f2fc" : "#151515")};
+  }
+
   .refperson {
     padding: 15px;
     display: flex;
@@ -29,6 +34,8 @@ const RefWrap = styled.div<{ bgTheme: boolean }>`
     background-color: ${({ bgTheme }) => (bgTheme ? "black" : "white")};
     border: 2px solid ${({ bgTheme }) => (bgTheme ? "#393939" : "#e8dfec")};
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
 
   .refperson:hover {
@@ -41,6 +48,7 @@ const RefWrap = styled.div<{ bgTheme: boolean }>`
 
   .refperson p {
     font-size: 1rem;
+    font-weight: 500;
   }
 `;
 
