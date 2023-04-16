@@ -2,6 +2,9 @@ import React, { useState } from "react";
 // General Styling
 import "./App.css";
 import styled from "styled-components";
+// Icons
+import { BsMoonStarsFill } from "react-icons/bs";
+import { BsSunFill, BsSun } from "react-icons/bs";
 // Transition between pages & pages
 import TransitionRoutesY from "./TransitionRoutesY";
 import TransitionRoutesX from "./TransitionRoutesX";
@@ -47,6 +50,17 @@ const App: React.FC = () => {
             <Link to={"/contact"}>Contact</Link>
           </li>
         </ul>
+        <div className="theme">
+          <button
+            className="about-btn"
+            onClick={() => {
+              setBgTheme(!bgTheme);
+              console.log("klickad", bgTheme);
+            }}
+          >
+            {bgTheme ? <BsSunFill /> : <BsMoonStarsFill />}
+          </button>
+        </div>
       </NavBar>
       {/* Routes | <TransitionRoutes Y X> */}
       <TransitionRoutesY>

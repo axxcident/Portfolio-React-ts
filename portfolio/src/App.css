@@ -104,6 +104,12 @@ body {
   text-decoration: none;
 }
 
+.theme {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
 
 /* About */
 .about-page {
