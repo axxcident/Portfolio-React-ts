@@ -56,27 +56,31 @@ const RefPerson: React.FC<PersonProps> = ({
     <>
       {bgTheme ? (
         <RefWrap bgTheme={true}>
-          <div className="refperson">
-            {/* <p>Gender: {gender} </p> */}
-            <img src={picture.thumbnail} alt="refperson" />
-            <p>
-              Name: {name.title} {name.first} {name.last}{" "}
-            </p>
-            {/* <p>Email: {email} </p> */}
-            <p>ID: {id} </p>
-          </div>
+          <Link to={`/focusref/${id}`}>
+            <div className="refperson">
+              {/* <p>Gender: {gender} </p> */}
+              <img src={picture.thumbnail} alt="refperson" />
+              <p>
+                Name: {name.title} {name.first} {name.last}{" "}
+              </p>
+              {/* <p>Email: {email} </p> */}
+              <p>ID: {id} </p>
+            </div>
+          </Link>
         </RefWrap>
       ) : (
         <RefWrap bgTheme={false}>
-          <div className="refperson">
-            {/* <p>Gender: {gender} </p> */}
-            <img src={picture.thumbnail} alt="refperson" />
-            <p>
-              Name: {name.title} {name.first} {name.last}{" "}
-            </p>
-            {/* <p>Email: {email} </p> */}
-            <p>ID: {id} </p>
-          </div>
+          <Link to={`/focusref/${id}`}>
+            <div className="refperson">
+              {/* <p>Gender: {gender} </p> */}
+              <img src={picture.thumbnail} alt="refperson" />
+              <p>
+                Name: {name.title} {name.first} {name.last}{" "}
+              </p>
+              {/* <p>Email: {email} </p> */}
+              <p>ID: {id} </p>
+            </div>
+          </Link>
         </RefWrap>
       )}
     </>
