@@ -257,6 +257,14 @@ body {
   max-width: 84%;
 }
 
+@media only screen and (max-width: 700px) {
+  .portfolio-page {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
 /* Services */
 .services-page {
   margin: 0 0 0 calc(220px + 2vmin);
@@ -443,11 +451,36 @@ body {
 .referrals-page {
   margin: 0 0 0 calc(260px + 2vmin);
   width: 80%;
-  height: 90vh;
+  min-height: 70vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .referrals-page {
+    height: auto;
+  }
+  .refperson-container {
+    height: auto;
+  }
+  .refperson {
+    margin: 20px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .referrals-page {
+    height: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .refperson-container {
+    height: 94%;
+  }
 }
 
 /* Contact */
@@ -478,5 +511,12 @@ body {
 @media only screen and (max-width: 1000px) {
   #root > div > div:nth-child(3) {
     width: 85%;
+    /* height: 95vh; */
+    height: 150%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #root > div > div:nth-child(3) {
+    width: 100%;
   }
 }

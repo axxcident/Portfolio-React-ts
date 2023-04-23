@@ -69,7 +69,7 @@ const RefPerson: React.FC<PersonProps> = ({
               {/* <p>Gender: {gender} </p> */}
               <img src={picture.thumbnail} alt="refperson" />
               <p>
-                Name: {name.title} {name.first} {name.last}{" "}
+                {name.title} {name.first} {name.last}{" "}
               </p>
               {/* <p>Email: {email} </p> */}
               {/* <p>ID: {id} </p> */}
@@ -83,7 +83,7 @@ const RefPerson: React.FC<PersonProps> = ({
               {/* <p>Gender: {gender} </p> */}
               <img src={picture.thumbnail} alt="refperson" />
               <p>
-                Name: {name.title} {name.first} {name.last}{" "}
+                {name.title} {name.first} {name.last}{" "}
               </p>
               {/* <p>Email: {email} </p> */}
               {/* <p>ID: {id} </p> */}

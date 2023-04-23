@@ -24,16 +24,14 @@ const Wrap = styled.div<{ bgTheme: boolean }>`
   @media only screen and (max-width: 700px) {
     width: 80vw;
     margin-top: 0;
-
-    .portfolio-page {
-      max-width: 100%;
-    }
+    max-height: none;
+    height: auto;
 
     .titel {
       left: calc(25px + 2vmin);
     }
     .works-album {
-      margin: 100px 0px 0px 0px !important;
+      margin: 125px 0px 0px 0px !important;
     }
 
     .works-album a {
@@ -138,7 +136,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ bgTheme }) => {
     <>
       {bgTheme ? (
         <section className="portfolio-page">
-          <Wrap bgTheme={true}>
+          <Wrap bgTheme={true} className="portfolio-wrappen">
             <div className="titel">
               <h2>Portfolio</h2>
               <p>Click to learn more about each project</p>
