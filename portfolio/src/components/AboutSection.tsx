@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 interface AboutProps {
   namn: string;
@@ -61,12 +62,14 @@ const AboutSection: React.FC<AboutProps> = ({
             <button
               className="about-btn"
               style={myShadow}
-              onClick={() => {
-                setTema(!tema);
-                console.log("klickad", tema);
-              }}
+              // onClick={() => {
+              //   setTema(!tema);
+              //   console.log("klickad", tema);
+              // }}
             >
-              Explore
+              <Link className="about-link" to={"/portfolio"}>
+                Explore Portfolio
+              </Link>
             </button>
           </div>
           <img
@@ -100,12 +103,14 @@ const AboutSection: React.FC<AboutProps> = ({
             </p>
             <button
               className="about-btn"
-              onClick={() => {
-                setTema(!tema);
-                console.log("klickad", tema);
-              }}
+              // onClick={() => {
+              //   setTema(!tema);
+              //   console.log("klickad", tema);
+              // }}
             >
-              Explore
+              <Link className="about-link" to={"/portfolio"}>
+                Explore Portfolio
+              </Link>
             </button>
           </div>
           <img
