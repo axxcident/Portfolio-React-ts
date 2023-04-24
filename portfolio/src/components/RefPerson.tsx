@@ -31,7 +31,7 @@ const RefWrap = styled.div<{ bgTheme: boolean }>`
     /* border: 2px solid var(--bg-black-50); */
     border-radius: 30px;
     margin: 30px;
-    background-color: ${({ bgTheme }) => (bgTheme ? "black" : "white")};
+    background-color: ${({ bgTheme }) => (bgTheme ? "black" : "#fdf9ff")};
     border: 2px solid ${({ bgTheme }) => (bgTheme ? "#393939" : "#e8dfec")};
     cursor: pointer;
     display: flex;

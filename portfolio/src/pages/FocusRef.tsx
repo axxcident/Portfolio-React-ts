@@ -23,6 +23,11 @@ const FocusWrap = styled.div<{ bgTheme: boolean }>`
   justify-content: space-evenly;
   align-items: center;
 
+  @media only screen and (max-width: 700px) {
+    margin-left: 0;
+    width: 100%;
+  }
+
   .focus-page {
     display: flex;
     flex-direction: column;
@@ -34,19 +39,26 @@ const FocusWrap = styled.div<{ bgTheme: boolean }>`
     text-align: center;
   }
 
+  .focus-quote {
+    margin-bottom: 40px;
+    font-size: 1rem;
+  }
+
   .focus-page img {
     height: auto;
     width: 250px;
     border-radius: 10px;
   }
 
-  .focus-page p {
-    font-size: 1.3rem;
-    width: 50vw;
+  .focus-contact {
+    font-size: 1rem;
   }
 
   #citatet {
     font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 2rem;
   }
 
   .question {
@@ -60,6 +72,12 @@ const FocusWrap = styled.div<{ bgTheme: boolean }>`
   }
   #mikrofon {
     font-size: 7rem;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .question p {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -113,15 +131,15 @@ const FocusRef: React.FC<FocusRefProps> = ({ bgTheme }) => {
           {userData && (
             <div className="focus-page">
               <img src={userData.picture.large} alt="refperson" />
-              <p>
+              <p className="focus-quote">
                 "I would probably frame our latest project like so: <br />{" "}
                 <span id="citatet">{quote?.citat}</span>"
               </p>
-              <p>
-                namn: {userData.name.title} {userData.name.first}{" "}
+              <p className="focus-contact">
+                Name: {userData.name.title} {userData.name.first}{" "}
                 {userData.name.last}
               </p>
-              <p>Email: {userData.email}</p>
+              <p className="focus-contact">Email: {userData.email}</p>
             </div>
           )}
         </FocusWrap>
@@ -137,14 +155,15 @@ const FocusRef: React.FC<FocusRefProps> = ({ bgTheme }) => {
           {userData && (
             <div className="focus-page">
               <img src={userData.picture.large} alt="refperson" />
-              <p>
+              <p className="focus-quote">
                 "I would probably frame our latest project like so: <br />{" "}
                 <span id="citatet">{quote?.citat}</span>"
               </p>
-              <p>
-                {userData.name.title} {userData.name.first} {userData.name.last}
+              <p className="focus-contact">
+                Name: {userData.name.title} {userData.name.first}{" "}
+                {userData.name.last}
               </p>
-              <p>email: {userData.email}</p>
+              <p className="focus-contact">Email: {userData.email}</p>
             </div>
           )}
         </FocusWrap>
